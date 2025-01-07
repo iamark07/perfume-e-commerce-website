@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body class="font-sans text-gray-800">
+    <!-- Hero Section -->
+    <div id="hero" class="hero relative h-screen bg-cover !bg-left md:bg-center"
+        style="background-image: url('assets/img/slider-1.jpg');">
+        <div class="absolute inset-0"></div>
+
+        <!-- Header -->
+        <header id="header"
+            class="header fixed top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition duration-300">
+            <!-- Logo -->
+            <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+                <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
+                <a href="about.html" class="text-white hover:text-gray-300">About</a>
+                <a href="contact.html" class="text-white hover:text-gray-300">Contact</a>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex gap-2 items-center space-x-4">
+                <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
+                <i class="ri-shopping-cart-line text-white text-xl cursor-pointer"></i>
+                <i class="ri-user-line text-white text-xl cursor-pointer"></i>
+                <button id="menu-btn" class="block md:hidden text-white text-xl">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search Box -->
+        <div id="search-box"
+            class="absolute w-96 z-10 top-16 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg hidden transition duration-300">
+            <div class="flex items-center space-x-2">
+                <input type="text" placeholder="Search for perfumes..."
+                    class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none" />
+                <button class="py-2 px-3 bg-gray-800 text-white rounded-lg">
+                    <i class="ri-search-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="absolute inset-0 z-10 flex flex-col justify-center items-center text-center text-white px-4 mt-32">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover Your Fragrance</h1>
+            <p class="text-lg md:text-xl">Experience luxury with every scent</p>
+            <button class="mt-6 px-6 py-3 bg-white text-gray-800 rounded-lg hover:bg-gray-200">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed z-50 inset-0 bg-black bg-opacity-80 flex-col justify-center items-center transition-transform transform -translate-x-full">
+        <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
+            <i class="ri-close-line"></i>
+        </button>
+        <nav class="text-white text-lg p-10">
+            <!-- Logo -->
+            <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+            <ul class="mt-10 flex flex-col gap-5">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        const header = document.getElementById('header');
+        const searchIcon = document.getElementById('search-icon');
+        const searchBox = document.getElementById('search-box');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const hero = document.getElementById('hero');
+
+        const heroImages = [
+            'assets/img/slider-1.jpg',
+            'assets/img/slider-2.jpg',
+            'assets/img/slider-3.jpg',
+        ];
+        let currentImageIndex = 0;
+
+        function changeHeroImage() {
+            
+            setTimeout(() => {
+                currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+                hero.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
+            }, 1000); // Time delay for fade transition
+        }
+
+        setInterval(changeHeroImage, 6000); // Change every 6 seconds
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white', 'shadow-md');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-white', 'shadow-md');
+                header.classList.add('bg-transparent');
+            }
+        });
+
+        // Toggle search box
+        searchIcon.addEventListener('click', () => {
+            searchBox.classList.toggle('hidden');
+        });
+
+        // Toggle mobile menu
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+    </script>
+</body>
+
+</html>
