@@ -7,16 +7,25 @@
     <title>Perfume E-commerce</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body class="font-sans text-gray-800">
     <!-- Hero Section -->
-    <div id="hero" class="hero relative h-[100dvh] bg-cover !bg-left md:bg-center"
-        style="background-image: url('assets/img/slider-1.jpg');">
-        <div class="absolute inset-0"></div>
+    <div id="hero" class="relative h-[100dvh] bg-black overflow-hidden">
+
+        <!-- Dark Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-10"></div>
+
+        <!-- Images for the carousel -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="assets/img/slider-1.jpg" alt="Hero Image 1"
+                class="hero-image absolute inset-0 w-full h-full object-cover object-left opacity-100">
+            <img src="assets/img/slider-2.jpg" alt="Hero Image 2"
+                class="hero-image absolute inset-0 w-full h-full object-cover object-left opacity-0">
+            <img src="assets/img/slider-3.jpg" alt="Hero Image 3"
+                class="hero-image absolute inset-0 w-full h-full object-cover object-center opacity-0">
+        </div>
 
         <!-- Header -->
         <header id="header"
@@ -45,13 +54,15 @@
 
         <!-- Search Box -->
         <div id="search-box"
-            class="absolute w-72 md:w-96 z-10 top-16 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg hidden transition duration-300">
-            <div class="flex items-center space-x-2">
-                <input type="text" placeholder="Search for perfumes..."
-                    class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none" />
-                <button class="py-2 px-3 bg-gray-800 text-white rounded-lg">
-                    <i class="ri-search-line"></i>
-                </button>
+            class="absolute w-72 md:w-96 z-10 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+            <div>
+                <form action="" class="flex items-center space-x-2">
+                    <input type="text" placeholder="Search for perfumes..."
+                        class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none" />
+                    <button type="submit" class="py-2 px-3 bg-gray-800 text-white rounded-lg">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
             </div>
         </div>
 
@@ -88,24 +99,20 @@
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMenu = document.getElementById('close-menu');
-        const hero = document.getElementById('hero');
-
-        const heroImages = [
-            'assets/img/slider-1.jpg',
-            'assets/img/slider-2.jpg',
-            'assets/img/slider-3.jpg',
-        ];
+        const heroImages = document.querySelectorAll('.hero-image');
         let currentImageIndex = 0;
 
+        // Image carousel functionality
         function changeHeroImage() {
-            
-            setTimeout(() => {
-                currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-                hero.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
-            }, 1000); // Time delay for fade transition
+            heroImages[currentImageIndex].classList.remove('opacity-100');
+            heroImages[currentImageIndex].classList.add('opacity-0');
+
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroImages[currentImageIndex].classList.remove('opacity-0');
+            heroImages[currentImageIndex].classList.add('opacity-100');
         }
 
-        setInterval(changeHeroImage, 6000); // Change every 6 seconds
+        setInterval(changeHeroImage, 6000); // Change image every 6 seconds
 
         // Add scroll effect to header
         window.addEventListener('scroll', () => {
@@ -120,7 +127,19 @@
 
         // Toggle search box
         searchIcon.addEventListener('click', () => {
-            searchBox.classList.toggle('hidden');
+            searchBox.classList.toggle('opacity-100');
+            searchBox.classList.toggle('pointer-events-auto');
+            searchBox.classList.toggle('top-16');
+        });
+
+        // Close search box when clicking outside of it
+        document.addEventListener('click', (event) => {
+            const isClickInsideSearchBox = searchBox.contains(event.target);
+            const isClickOnSearchIcon = searchIcon.contains(event.target);
+
+            if (!isClickInsideSearchBox && !isClickOnSearchIcon) {
+                searchBox.classList.remove('opacity-100', 'pointer-events-auto', 'top-16');
+            }
         });
 
         // Toggle mobile menu
