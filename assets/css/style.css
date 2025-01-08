@@ -7,3 +7,25 @@
 .hero-image {
   transition: opacity 1s ease-in-out;
 }
+
+/* Optional: Add transitions for smooth display */
+.hidden_sort {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.show_sort {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Optional: Add transitions for smooth display */
+.hidden_filter {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.show_filter {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}

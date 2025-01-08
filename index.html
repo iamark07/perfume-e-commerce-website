@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="font-sans text-gray-800">
+<body class="bg-[#fff7ee] font-sans text-gray-800">
     <!-- Hero Section -->
-    <div id="hero" class="relative h-[100dvh] bg-black overflow-hidden">
+    <div id="hero" class="relative h-[100dvh] bg-gray-900 overflow-hidden">
 
         <!-- Dark Overlay -->
-        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-10"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-20 z-10"></div>
 
         <!-- Images for the carousel -->
         <div class="absolute inset-0 w-full h-full">
@@ -29,7 +29,7 @@
 
         <!-- Header -->
         <header id="header"
-            class="header fixed top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition duration-300">
+            class="header fixed top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
             <!-- Logo -->
             <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
 
@@ -54,12 +54,13 @@
 
         <!-- Search Box -->
         <div id="search-box"
-            class="absolute w-72 md:w-96 z-10 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+            class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
             <div>
                 <form action="" class="flex items-center space-x-2">
                     <input type="text" placeholder="Search for perfumes..."
                         class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none" />
-                    <button type="submit" class="py-2 px-3 bg-gray-800 text-white rounded-lg">
+                    <button type="submit"
+                        class="py-2 px-3 bg-gray-600 transition-all duration-300 text-white rounded-lg">
                         <i class="ri-search-line"></i>
                     </button>
                 </form>
@@ -70,13 +71,15 @@
         <div class="absolute inset-0 z-10 flex flex-col justify-center items-center text-center text-white px-4 mt-32">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover Your Fragrance</h1>
             <p class="text-lg md:text-xl">Experience luxury with every scent</p>
-            <button class="mt-6 px-6 py-3 bg-white text-gray-800 rounded-lg hover:bg-gray-200">Shop Now</button>
+            <button
+                class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-600 transition-all duration-300">Shop
+                Now</button>
         </div>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="fixed z-50 inset-0 bg-black bg-opacity-80 flex-col justify-center items-center transition-transform transform -translate-x-full">
+        class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
         <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
             <i class="ri-close-line"></i>
         </button>
@@ -92,65 +95,280 @@
         </nav>
     </div>
 
-    <script>
-        const header = document.getElementById('header');
-        const searchIcon = document.getElementById('search-icon');
-        const searchBox = document.getElementById('search-box');
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenu = document.getElementById('close-menu');
-        const heroImages = document.querySelectorAll('.hero-image');
-        let currentImageIndex = 0;
+    <section class="brand-logo_container w-full bg-white py-3 md:py-5">
+        <marquee behavior="" direction="">
+            <div class="brand_logo flex items-center whitespace-nowrap gap-7 md:gap-16">
+                <div class="logo">
+                    <img src="assets/img/brand-1.png" alt=""
+                        class="min-w-14 h-14 sm:min-w-16 sm:!h-16 md:min-w-24 md:h-24 object-contain">
+                </div>
+                <div class="logo">
+                    <img src="assets/img/brand-2.png" alt=""
+                        class="min-w-14 h-14 sm:min-w-16 sm:!h-16 md:min-w-24 md:h-24 object-contain">
+                </div>
+                <div class="logo">
+                    <img src="assets/img/brand-3.png" alt=""
+                        class="min-w-14 h-14 sm:min-w-16 sm:!h-16 md:min-w-24 md:h-24 object-contain">
+                </div>
+                <div class="logo">
+                    <img src="assets/img/brand-4.png" alt=""
+                        class="min-w-14 h-14 sm:min-w-16 sm:!h-16 md:min-w-24 md:h-24 object-contain">
+                </div>
+                <div class="logo">
+                    <img src="assets/img/brand-5.png" alt=""
+                        class="min-w-14 h-14 sm:min-w-16 sm:!h-16 md:min-w-24 md:h-24 object-contain">
+                </div>
+                <div class="logo">
+                    <img src="assets/img/brand-6.png" alt=""
+                        class="min-w-14 h-14 sm:min-w-16 sm:!h-16 md:min-w-24 md:h-24 object-contain">
+                </div>
+            </div>
+        </marquee>
+    </section>
 
-        // Image carousel functionality
-        function changeHeroImage() {
-            heroImages[currentImageIndex].classList.remove('opacity-100');
-            heroImages[currentImageIndex].classList.add('opacity-0');
+    <!-- Filter and Sort Controls -->
+    <div class="max-w-6xl mx-auto p-4 mt-20">
+        <div class="grid grid-cols-2 md:grid-cols-none md:flex gap-6 justify-between items-center mb-6">
+            <div class="filter_option">
+                <!-- Sort Button -->
+                <h4 id="filterButton"
+                    class="relative filter_select_btn cursor-pointer md:w-[200px] rounded-t-md md:rounded-md bg-gray-900 text-white px-5 py-2 flex items-center justify-between">
+                    Filter<i class="ri-arrow-drop-down-line text-2xl ms-2 select_down_arrow"></i>
+                    <!-- filter Options Dropdown -->
+                    <ul id="filterOptions"
+                        class="hidden_filter shadow-md absolute z-20 top-full overflow-hidden rounded-b-md left-0 bg-white w-full opacity-0 pointer-events-none">
+                        <li class="p-3 text-nowrap border-b border-solid text-black border-gray-200 cursor-pointer">Woody</li>
+                        <li class="p-3 text-nowrap border-b border-solid text-black border-gray-200 cursor-pointer">Citrus</li>
+                        <li class="p-3 text-nowrap border border-solid text-black border-gray-200 cursor-pointer">Floral</li>
+                    </ul>
+                </h4>
+            </div>
 
-            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-            heroImages[currentImageIndex].classList.remove('opacity-0');
-            heroImages[currentImageIndex].classList.add('opacity-100');
-        }
 
-        setInterval(changeHeroImage, 6000); // Change image every 6 seconds
+            <div class="sort_option">
+                <!-- Sort Button -->
+                <h4 id="sortButton"
+                    class="relative sort_select_btn cursor-pointer md:w-[200px] rounded-t-md md:rounded-md bg-gray-900 text-white px-5 py-2 flex items-center justify-between">
+                    Sort<i class="ri-arrow-drop-down-line text-2xl ms-2 select_down_arrow"></i>
+                    <!-- Sort Options Dropdown -->
+                    <ul id="sortOptions"
+                        class="hidden_sort absolute z-20 top-full overflow-hidden shadow-md rounded-b-md left-0 bg-white w-full opacity-0 pointer-events-none">
+                        <li class="p-3 text-nowrap border-b border-solid text-black border-gray-200 cursor-pointer text-sm">Price: Low to High</li>
+                        <li class="p-3 text-nowrap border border-solid text-black border-gray-200 cursor-pointer text-sm">Price: High to Low</li>
+                    </ul>
+                </h4>
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('bg-white', 'shadow-md');
-                header.classList.remove('bg-transparent');
-            } else {
-                header.classList.remove('bg-white', 'shadow-md');
-                header.classList.add('bg-transparent');
-            }
-        });
 
-        // Toggle search box
-        searchIcon.addEventListener('click', () => {
-            searchBox.classList.toggle('opacity-100');
-            searchBox.classList.toggle('pointer-events-auto');
-            searchBox.classList.toggle('top-16');
-        });
+            </div>
+        </div>
+    </div>
 
-        // Close search box when clicking outside of it
-        document.addEventListener('click', (event) => {
-            const isClickInsideSearchBox = searchBox.contains(event.target);
-            const isClickOnSearchIcon = searchIcon.contains(event.target);
+    <!-- Product Cards -->
+    <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 p-4">
+        <!-- Manually added cards -->
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-1.jpg" alt="Rose Delight"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Rose Delight</h3>
+                </a>
+                <p class="text-gray-600">Category: Floral</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$25.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
 
-            if (!isClickInsideSearchBox && !isClickOnSearchIcon) {
-                searchBox.classList.remove('opacity-100', 'pointer-events-auto', 'top-16');
-            }
-        });
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-2.jpg" alt="Citrus Splash"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Citrus Splash</h3>
+                </a>
+                <p class="text-gray-600">Category: Citrus</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$30.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
 
-        // Toggle mobile menu
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('-translate-x-full');
-        });
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-3.jpg" alt="Sandalwood Bliss"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Sandalwood Bliss
+                    </h3>
+                </a>
+                <p class="text-gray-600">Category: Woody</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$35.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
 
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('-translate-x-full');
-        });
-    </script>
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-4.jpg" alt="Lemon Zest" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Lemon Zest</h3>
+                </a>
+                <p class="text-gray-600">Category: Citrus</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$20.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
+
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-5.jpg" alt="Jasmine Breeze"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Jasmine Breeze
+                    </h3>
+                </a>
+                <p class="text-gray-600">Category: Floral</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$28.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
+
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-6.jpg" alt="Cedarwood Charm"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Cedarwood Charm
+                    </h3>
+                </a>
+                <p class="text-gray-600">Category: Woody</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$40.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-7.jpg" alt="Cedarwood Charm"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Cedarwood Charm
+                    </h3>
+                </a>
+                <p class="text-gray-600">Category: Woody</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$40.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
+        <div class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+            <a href="#" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img src="assets/img/item-8.jpg" alt="Cedarwood Charm"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+            <div class="p-4">
+                <a href="#">
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Cedarwood Charm
+                    </h3>
+                </a>
+                <p class="text-gray-600">Category: Woody</p>
+                <p class="text-blue-600 font-bold mt-3 text-xl">$40.00</p>
+                <a href="#"><button
+                        class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                        to Cart</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="max-w-6xl mt-10 mx-auto flex justify-center items-center space-x-2 p-4">
+        <a href="#page1"
+            class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Prev</a>
+        <a href="#page1" class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-gray-900 text-white">1</a>
+        <a href="#page2"
+            class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">2</a>
+        <a href="#page3"
+            class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">3</a>
+        <a href="#page2"
+            class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Next</a>
+    </div>
+
+    <footer class="bg-gray-900 text-white mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                <!-- Brand Section -->
+                <div>
+                    <h2 class="text-lg font-bold"><a href="index.html">PerfumeBrand</a></h2>
+                    <p class="text-gray-400 mt-4">
+                        Discover a world of enchanting fragrances. From timeless classics to modern favorites, Perfume
+                        Haven has it all.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Quick Links
+                    </h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Shop</a></li>
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Customer
+                        Service</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="hover:text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Returns & Exchanges</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Stay Updated
+                    </h3>
+                    <p class="text-gray-400">Subscribe to our newsletter to get the latest deals and updates.</p>
+                    <form class="mt-4 flex">
+                        <input type="email" placeholder="Your Email"
+                            class="w-full px-4 py-2 rounded-l-md border border-gray-600 bg-gray-700 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit"
+                            class="px-4 py-2 bg-blue-600 rounded-r-md text-white hover:bg-blue-700">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
+                <p class="text-gray-400">&copy; 2025 Perfume Haven. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="ri-linkedin-box-fill text-3xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="ri-twitter-fill text-3xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="ri-instagram-fill text-3xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
