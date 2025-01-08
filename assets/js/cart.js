@@ -55,25 +55,3 @@ menuBtn.addEventListener("click", () => {
 closeMenu.addEventListener("click", () => {
   mobileMenu.classList.add("-translate-x-full");
 });
-
-
-
-
-// Get references to the elements
-const sortButton = document.getElementById('sortButton');
-const sortOptions = document.getElementById('sortOptions');
-const filterButton = document.getElementById('filterButton');
-const filterOptions = document.getElementById('filterOptions');
-
-// Add click event listener to the sort button
-sortButton.addEventListener('click', () => {
-  // Toggle the visibility of the dropdown menu
-  sortOptions.classList.toggle('show_sort');
-});
-// Add click event listener to the sort button
-filterButton.addEventListener('click', () => {
-  // Toggle the visibility of the dropdown menu
-  filterOptions.classList.toggle('show_filter');
-});
-
-
