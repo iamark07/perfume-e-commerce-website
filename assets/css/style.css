@@ -29,3 +29,20 @@
   opacity: 1 !important;
   pointer-events: auto !important;
 }
+
+
+/* Additional CSS for animations */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

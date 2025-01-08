@@ -43,7 +43,7 @@ document.addEventListener("click", (event) => {
   const isClickOnSearchIcon = searchIcon.contains(event.target);
 
   if (!isClickInsideSearchBox && !isClickOnSearchIcon) {
-    searchBox.classList.remove("opacity-100", "pointer-events-auto", "top-16");
+    searchBox.classList.remove("opacity-100", "pointer-events-auto", "top-20");
   }
 });
 

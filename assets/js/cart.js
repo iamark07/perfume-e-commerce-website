@@ -4,20 +4,6 @@ const searchBox = document.getElementById("search-box");
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const closeMenu = document.getElementById("close-menu");
-const heroImages = document.querySelectorAll(".hero-image");
-let currentImageIndex = 0;
-
-// Image carousel functionality
-function changeHeroImage() {
-  heroImages[currentImageIndex].classList.remove("opacity-100");
-  heroImages[currentImageIndex].classList.add("opacity-0");
-
-  currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-  heroImages[currentImageIndex].classList.remove("opacity-0");
-  heroImages[currentImageIndex].classList.add("opacity-100");
-}
-
-setInterval(changeHeroImage, 6000); // Change image every 6 seconds
 
 // Add scroll effect to header
 window.addEventListener("scroll", () => {
@@ -43,7 +29,7 @@ document.addEventListener("click", (event) => {
   const isClickOnSearchIcon = searchIcon.contains(event.target);
 
   if (!isClickInsideSearchBox && !isClickOnSearchIcon) {
-    searchBox.classList.remove("opacity-100", "pointer-events-auto", "top-16");
+    searchBox.classList.remove("opacity-100", "pointer-events-auto", "top-20");
   }
 });
 
