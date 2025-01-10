@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#fff7ee] font-sans text-gray-800">
+
+    <!-- Header -->
+    <header id="header"
+        class="header sticky top-0 !bg-gray-900 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
+        <!-- Logo -->
+        <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-6 poppins-regular">
+            <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+            <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
+            <a href="about.html" class="text-white hover:text-gray-300">About</a>
+            <a href="contact.html" class="text-white hover:text-gray-300">Contact</a>
+        </nav>
+
+        <!-- Icons -->
+        <div class="flex gap-1 md:gap-2 items-center space-x-4">
+            <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
+            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer"></i></a>
+            <a href="login.html"><i class="ri-user-line text-white text-xl cursor-pointer"></i></a>
+            <button id="menu-btn" class="block md:hidden text-white text-xl">
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Search Box -->
+    <div id="search-box"
+        class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+        <div>
+            <form action="" class="flex items-center space-x-2">
+                <input type="text" placeholder="Search for perfumes..."
+                    class="w-full border poppins-regular border-gray-300 p-2 rounded-lg focus:outline-none" />
+                <button type="submit" class="py-2 px-3 bg-gray-900 transition-all duration-300 text-white rounded-lg">
+                    <i class="ri-search-line"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
+        <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
+            <i class="ri-close-line"></i>
+        </button>
+        <nav class="text-white text-lg py-10 px-5">
+            <!-- Logo -->
+            <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+            <ul class="mt-10 flex flex-col gap-5 poppins-regular">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Search Results Section -->
+    <section class="search-results-section px-5 md:px-20 py-20">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-2xl font-bold mb-6 text-gray-800">Search Results for "<span id="searchQuery">Perfume</span>"
+            </h1>
+
+            <!-- Results Grid -->
+            <div id="resultsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Result Item -->
+                <div
+                    class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+                    <a href="product.html" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img
+                            src="assets/img/item-1.jpg" alt="Rose Delight"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+                    <div class="p-4">
+                        <a href="product.html">
+                            <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Rose
+                                Delight</h3>
+                        </a>
+                        <p class="text-gray-600">Category: Floral</p>
+                        <p class="text-blue-600 font-bold mt-3 text-xl">$25.00</p>
+                        <a href="cart.html"><button
+                                class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                                to Cart</button></a>
+                    </div>
+                </div>
+                <div
+                    class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+                    <a href="product.html" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img
+                            src="assets/img/item-1.jpg" alt="Rose Delight"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+                    <div class="p-4">
+                        <a href="product.html">
+                            <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Rose
+                                Delight</h3>
+                        </a>
+                        <p class="text-gray-600">Category: Floral</p>
+                        <p class="text-blue-600 font-bold mt-3 text-xl">$25.00</p>
+                        <a href="cart.html"><button
+                                class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                                to Cart</button></a>
+                    </div>
+                </div>
+                <div
+                    class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
+                    <a href="product.html" class="inline-block w-full h-40 md:h-48 overflow-hidden"><img
+                            src="assets/img/item-1.jpg" alt="Rose Delight"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"></a>
+                    <div class="p-4">
+                        <a href="product.html">
+                            <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">Rose
+                                Delight</h3>
+                        </a>
+                        <p class="text-gray-600">Category: Floral</p>
+                        <p class="text-blue-600 font-bold mt-3 text-xl">$25.00</p>
+                        <a href="cart.html"><button
+                                class="mt-4 w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-600 transition-all duration-300">Add
+                                to Cart</button></a>
+                    </div>
+                </div>
+
+                <!-- More items as needed -->
+            </div>
+
+            <!-- No Results Message -->
+            <p id="noResultsMessage" class="hidden text-center text-gray-600 mt-10">
+                No results found. Please try searching for something else.
+            </p>
+        </div>
+    </section>
+
+    <script src="assets/js/cart.js"></script>
+
+    <script>
+        // Example script to toggle no results message
+        const resultsGrid = document.getElementById('resultsGrid');
+        const noResultsMessage = document.getElementById('noResultsMessage');
+        if (resultsGrid.children.length === 0) {
+            resultsGrid.classList.add('hidden');
+            noResultsMessage.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
