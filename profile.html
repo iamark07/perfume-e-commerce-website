@@ -71,15 +71,19 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="#personal-info">Personal Information</a></li>
+                <li><a href="#order-history">Order History</a></li>
+                <li><a href="#address-list">Address List</a></li>
+                <li><a href="#change-password">Change Password</a></li>
             </ul>
         </nav>
     </div>
 
     <!-- Main Dashboard Section -->
-    <section class="px-5 md:px-20 py-10">
+    <section class="px-5 md:px-20 lg:px-5 xl:px-20 py-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
             <!-- Sidebar -->
-            <div class="sidebar bg-white shadow-lg rounded-lg p-6 sticky top-[108px]">
+            <div class="sidebar bg-white shadow-lg rounded-lg p-6 sticky top-[108px] hidden lg:block">
                 <h2 class="text-lg font-bold mb-4">Dashboard</h2>
                 <nav class="space-y-4 bg-gray-50 rounded-md shadow-sm p-3">
                     <a href="#personal-info" class="block text-gray-700 hover:text-gray-900">Personal Information</a>
@@ -97,15 +101,15 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-600 font-medium mb-2">Name</label>
-                            <input type="text" value="John Doe" class="w-full border-gray-300 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-gray-900">
+                            <input type="text" class="w-full border-gray-300 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-gray-900">
                         </div>
                         <div>
                             <label class="block text-gray-600 font-medium mb-2">Email</label>
-                            <input type="email" value="johndoe@example.com" class="w-full border-gray-300 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-gray-900" readonly>
+                            <input type="email" class="w-full border-gray-300 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-gray-900" readonly>
                         </div>
                         <div>
                             <label class="block text-gray-600 font-medium mb-2">Phone</label>
-                            <input type="text" value="+1234567890" class="w-full border-gray-300 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-gray-900">
+                            <input type="text" class="w-full border-gray-300 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-gray-900">
                         </div>
                     </div>
                     <div class="flex justify-end mt-6">
