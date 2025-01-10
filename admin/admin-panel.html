@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <main class="lg:flex">
+        <!-- Sidebar -->
+        <div
+            class="p-5 w-full flex lg:flex-col items-center lg:items-start justify-between lg:justify-start lg:w-64 lg:h-[100dvh] bg-gray-900 text-white sticky top-0">
+            <div class="">
+                <h1 class="text-2xl font-bold">Admin Panel</h1>
+            </div>
+            <ul class="space-y-2 mt-10 hidden lg:block">
+                <li class="hover:bg-gray-700 rounded-md"><a href="admin-panel.html"
+                        class="text-lg px-3 py-2 inline-block">Dashboard</a></li>
+                <!-- <li class="hover:bg-gray-700 rounded-md"><a href="admin_products.html" class="text-lg px-3 py-2 inline-block ">Manage Products</a>
+                </li>
+                <li class="hover:bg-gray-700 rounded-md"><a href="admin_orders.html" class="text-lg px-3 py-2 inline-block">Orders</a></li> -->
+            </ul>
+
+            <div id="admin-menu-btn"><i class="ri-menu-line text-white lg:hidden text-2xl"></i></div>
+
+            <ul id="admin-mobile-menu"
+                class="px-4 lg:hidden absolute top-full -left-full transition-all duration-300 w-full h-[100dvh] bg-gray-900">
+                <li class="mt-10 hover:bg-gray-700 rounded-md"><a href="admin-panel.html"
+                        class="text-lg px-3 py-2 inline-block">Dashboard</a></li>
+                <!-- <li class="hover:bg-gray-700 rounded-md"><a href="admin_products.html" class="text-lg px-3 py-2 inline-block ">Manage Products</a>
+                </li>
+                <li class="hover:bg-gray-700 rounded-md"><a href="admin_orders.html" class="text-lg px-3 py-2 inline-block">Orders</a></li> -->
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-8 w-full">
+            <!-- Page Title -->
+            <h1 class="text-3xl font-semibold mb-6">Dashboard</h1>
+
+            <div class="flex flex-col gap-5">
+                <!-- Products List -->
+                <div class="bg-white p-5 shadow-lg rounded-lg">
+                    <div class="flex justify-between">
+                        <h2 class="text-2xl font-semibold mb-4">Products</h2>
+                        <!-- Add Product Button -->
+                        <a href="add-product.html" class="bg-gray-900 text-white py-2 px-5 rounded-md h-fit">Add
+                            Product</a>
+                    </div>
+                    <table class="min-w-full table-auto mt-6">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="px-4 py-2 text-left">ID</th>
+                                <th class="px-4 py-2 text-left">Name</th>
+                                <th class="px-4 py-2 text-left">Price</th>
+                                <th class="px-4 py-2 text-left">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Product Row -->
+                            <tr>
+                                <td class="px-4 py-2">1</td>
+                                <td class="px-4 py-2">Perfume A</td>
+                                <td class="px-4 py-2">$49.99</td>
+                                <td class="px-4 py-2">
+                                    <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                    |
+                                    <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                </td>
+                            </tr>
+                            <!-- Sample Product Row -->
+                            <tr>
+                                <td class="px-4 py-2">1</td>
+                                <td class="px-4 py-2">Perfume A</td>
+                                <td class="px-4 py-2">$49.99</td>
+                                <td class="px-4 py-2">
+                                    <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                    |
+                                    <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                </td>
+                            </tr>
+                            <!-- Sample Product Row -->
+                            <tr>
+                                <td class="px-4 py-2">1</td>
+                                <td class="px-4 py-2">Perfume A</td>
+                                <td class="px-4 py-2">$49.99</td>
+                                <td class="px-4 py-2">
+                                    <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                    |
+                                    <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <!-- <div class="bg-white p-5 shadow-lg rounded-lg mt-6">
+                <h2 class="text-2xl font-semibold mb-4">Orders</h2>
+                <table class="min-w-full table-auto">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="px-4 py-2 text-left">Order ID</th>
+                            <th class="px-4 py-2 text-left">Customer</th>
+                            <th class="px-4 py-2 text-left">Total</th>
+                            <th class="px-4 py-2 text-left">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2">101</td>
+                            <td class="px-4 py-2">John Doe</td>
+                            <td class="px-4 py-2">$99.99</td>
+                            <td class="px-4 py-2">Shipped</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+    </main>
+
+    <script>
+        // Toggle mobile menu
+
+        const menuBtn = document.getElementById("admin-menu-btn");
+        const mobileMenu = document.getElementById("admin-mobile-menu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("left-0");
+        });
+    </script>
+</body>
+
+</html>

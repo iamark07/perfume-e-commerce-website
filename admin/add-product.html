@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <main class="lg:flex">
+        <!-- Sidebar -->
+        <div
+            class="p-5 w-full flex lg:flex-col items-center lg:items-start justify-between lg:justify-start lg:w-64 lg:h-[100dvh] bg-gray-900 text-white sticky top-0">
+            <div class="">
+                <h1 class="text-2xl font-bold">Admin Panel</h1>
+            </div>
+            <ul class="space-y-2 mt-10 hidden lg:block">
+                <li class="hover:bg-gray-700 rounded-md"><a href="admin-panel.html"
+                        class="text-lg px-3 py-2 inline-block">Dashboard</a></li>
+                <!-- <li class="hover:bg-gray-700 rounded-md"><a href="admin_products.html" class="text-lg px-3 py-2 inline-block ">Manage Products</a>
+                </li>
+                <li class="hover:bg-gray-700 rounded-md"><a href="admin_orders.html" class="text-lg px-3 py-2 inline-block">Orders</a></li> -->
+            </ul>
+
+            <div id="admin-menu-btn"><i class="ri-menu-line text-white lg:hidden text-2xl"></i></div>
+
+            <ul id="admin-mobile-menu"
+                class="px-4 lg:hidden absolute top-full -left-full transition-all duration-300 w-full h-[100dvh] bg-gray-900">
+                <li class="mt-10 hover:bg-gray-700 rounded-md"><a href="admin-panel.html"
+                        class="text-lg px-3 py-2 inline-block">Dashboard</a></li>
+                <!-- <li class="hover:bg-gray-700 rounded-md"><a href="admin_products.html" class="text-lg px-3 py-2 inline-block ">Manage Products</a>
+                </li>
+                <li class="hover:bg-gray-700 rounded-md"><a href="admin_orders.html" class="text-lg px-3 py-2 inline-block">Orders</a></li> -->
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-8 flex flex-col items-center w-full">
+            <h1 class="text-3xl font-semibold mb-6">Add New Product</h1>
+
+            <!-- Product Form -->
+            <form action="add_product.php" method="POST" enctype="multipart/form-data"
+                class="bg-white p-6 shadow-lg rounded-lg w-full md:w-[600px]">
+                <div class="mb-4">
+                    <label for="name" class="block text-lg font-semibold">Product Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-3 mt-2 border rounded-md" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="description" class="block text-lg font-semibold">Product Description</label>
+                    <textarea id="description" name="description" rows="4" class="w-full p-3 mt-2 border rounded-md"
+                        required></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label for="price" class="block text-lg font-semibold">Price</label>
+                    <input type="number" id="price" name="price" class="w-full p-3 mt-2 border rounded-md" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="image" class="block text-lg font-semibold">Product Image</label>
+                    <input type="file" id="image" name="image" class="w-full p-3 mt-2 border rounded-md" required>
+                </div>
+
+                <button type="submit" class="bg-gray-900 text-white py-2 px-6 rounded-md mt-4">Add Product</button>
+            </form>
+        </div>
+
+
+    </main>
+
+    <script>
+        // Toggle mobile menu
+
+        const menuBtn = document.getElementById("admin-menu-btn");
+        const mobileMenu = document.getElementById("admin-mobile-menu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("left-0");
+        });
+    </script>
+</body>
+
+</html>
