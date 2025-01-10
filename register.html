@@ -89,6 +89,7 @@
                             <input type="email" id="email" name="email" required
                                 class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
                         </div>
+
                         <div class="col-span-2">
                             <label for="phone" class="block text-sm font-medium text-gray-700">Mobile No</label>
                             <input type="text" id="phone" name="phone" required
@@ -98,14 +99,29 @@
                         <div class="col-span-2">
                             <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                             <input type="password" id="password" name="password" required
-                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring fo class="
-                                col-span-2"cus:ring-gray-500 focus:outline-none">
+                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
                         </div>
 
                         <div class="col-span-2">
                             <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm
                                 Password</label>
                             <input type="password" id="confirmPassword" name="confirmPassword" required
+                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                        </div>
+
+                        <div class="col-span-2">
+                            <label for="userType" class="block text-sm font-medium text-gray-700">Register As</label>
+                            <select id="userType" name="userType" required
+                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+
+                        <!-- Hidden Admin Code Input -->
+                        <div id="adminCodeField" class="col-span-2" style="display: none;">
+                            <label for="adminCode" class="block text-sm font-medium text-gray-700">Admin Code</label>
+                            <input type="text" id="adminCode" name="adminCode"
                                 class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
                         </div>
 
@@ -131,6 +147,20 @@
     </section>
 
     <script src="assets/js/cart.js"></script>
+
+    <script>
+        // JavaScript to toggle the admin code field
+        const userTypeSelect = document.getElementById('userType');
+        const adminCodeField = document.getElementById('adminCodeField');
+    
+        userTypeSelect.addEventListener('change', function () {
+            if (userTypeSelect.value === 'admin') {
+                adminCodeField.style.display = 'block';
+            } else {
+                adminCodeField.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 

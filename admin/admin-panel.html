@@ -7,6 +7,15 @@
     <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .table_overflow::-webkit-scrollbar{
+            display: none;
+        }
+
+        table tbody tr:nth-child(odd){
+            background-color:  #f3f4f6;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -49,55 +58,57 @@
                     <div class="flex justify-between">
                         <h2 class="text-2xl font-semibold mb-4">Products</h2>
                         <!-- Add Product Button -->
-                        <a href="add-product.html" class="bg-gray-900 text-white py-2 px-5 rounded-md h-fit">Add
+                        <a href="add-product.html" class="bg-gray-900 text-white text-sm md:text-md py-2 px-5 rounded-md h-fit">Add
                             Product</a>
                     </div>
-                    <table class="min-w-full table-auto mt-6">
-                        <thead>
-                            <tr class="bg-gray-200">
-                                <th class="px-4 py-2 text-left">ID</th>
-                                <th class="px-4 py-2 text-left">Name</th>
-                                <th class="px-4 py-2 text-left">Price</th>
-                                <th class="px-4 py-2 text-left">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Sample Product Row -->
-                            <tr>
-                                <td class="px-4 py-2">1</td>
-                                <td class="px-4 py-2">Perfume A</td>
-                                <td class="px-4 py-2">$49.99</td>
-                                <td class="px-4 py-2">
-                                    <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
-                                    |
-                                    <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
-                                </td>
-                            </tr>
-                            <!-- Sample Product Row -->
-                            <tr>
-                                <td class="px-4 py-2">1</td>
-                                <td class="px-4 py-2">Perfume A</td>
-                                <td class="px-4 py-2">$49.99</td>
-                                <td class="px-4 py-2">
-                                    <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
-                                    |
-                                    <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
-                                </td>
-                            </tr>
-                            <!-- Sample Product Row -->
-                            <tr>
-                                <td class="px-4 py-2">1</td>
-                                <td class="px-4 py-2">Perfume A</td>
-                                <td class="px-4 py-2">$49.99</td>
-                                <td class="px-4 py-2">
-                                    <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
-                                    |
-                                    <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table_overflow overflow-x-auto w-full">
+                        <table class="min-w-full table-auto mt-6">
+                            <thead>
+                                <tr class="bg-gray-300">
+                                    <th class="px-4 py-2 text-left text-nowrap">ID</th>
+                                    <th class="px-4 py-2 text-left text-nowrap">Name</th>
+                                    <th class="px-4 py-2 text-left text-nowrap">Price</th>
+                                    <th class="px-4 py-2 text-left text-nowrap">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Sample Product Row -->
+                                <tr class="bg-gray-100">
+                                    <td class="px-4 py-2 text-nowrap">1</td>
+                                    <td class="px-4 py-2 text-nowrap">Perfume A</td>
+                                    <td class="px-4 py-2 text-nowrap">$49.99</td>
+                                    <td class="px-4 py-2 text-nowrap">
+                                        <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                        |
+                                        <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                    </td>
+                                </tr>
+                                <!-- Sample Product Row -->
+                                <tr>
+                                    <td class="px-4 py-2 text-nowrap">1</td>
+                                    <td class="px-4 py-2 text-nowrap">Perfume A</td>
+                                    <td class="px-4 py-2 text-nowrap">$49.99</td>
+                                    <td class="px-4 py-2 text-nowrap">
+                                        <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                        |
+                                        <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                    </td>
+                                </tr>
+                                <!-- Sample Product Row -->
+                                <tr>
+                                    <td class="px-4 py-2 text-nowrap">1</td>
+                                    <td class="px-4 py-2 text-nowrap">Perfume A</td>
+                                    <td class="px-4 py-2 text-nowrap">$49.99</td>
+                                    <td class="px-4 py-2 text-nowrap">
+                                        <a href="edit-product.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                        |
+                                        <a href="delete-product.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                    </td>
+                                </tr>
 
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
