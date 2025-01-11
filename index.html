@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfume E-commerce</title>
+
+    <!-- tailwind css cdn link -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- scroll animation css cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- rimix icon cdn link -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Perfume E-commerce</title>
 </head>
 
 <body class="bg-[#fff7ee] font-sans text-gray-800">
@@ -128,7 +138,7 @@
     </section>
 
     <!-- Filter and Sort Controls -->
-    <div class="max-w-6xl mx-auto p-4 mt-20">
+    <div class="max-w-6xl mx-auto p-4 mt-20" data-aos="fade-up">
         <div class="grid grid-cols-2 md:grid-cols-none md:flex gap-6 justify-between items-center mb-6">
             <div class="filter_option poppins-regular">
                 <!-- Sort Button -->
@@ -171,7 +181,7 @@
     </div>
 
     <!-- Product Cards -->
-    <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 p-4 poppins-regular">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 p-4 poppins-regular" data-aos="fade-up">
         <!-- Manually added cards -->
         <div
             class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
@@ -314,7 +324,7 @@
     </div>
 
     <!-- Pagination -->
-    <div class="max-w-6xl mt-10 mx-auto flex justify-center items-center space-x-2 p-4 poppins-regular">
+    <div class="max-w-6xl mt-10 mx-auto flex justify-center items-center space-x-2 p-4 poppins-regular" data-aos="fade-up">
         <a href="#page1"
             class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Prev</a>
         <a href="#page1" class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-gray-900 text-white">1</a>
@@ -326,7 +336,7 @@
             class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Next</a>
     </div>
 
-    <footer class="bg-gray-900 text-white mt-10 poppins-regular">
+    <footer class="bg-gray-900 text-white mt-10 poppins-regular" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
@@ -390,6 +400,14 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <!-- scroll animation script link -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 150,
+            duration: 700,
+        });
+    </script>
 </body>
 
 </html>

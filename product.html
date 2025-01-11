@@ -5,8 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
+    <!-- scroll animation css cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- tailwind css cdn link -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- rimix icon cdn link -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -72,11 +79,21 @@
     <!-- Product Details Container -->
     <div class="pt-5 lg:py-10 px-5 md:px-20 fade-in lg:mt-10">
         <div class="grid lg:grid-cols-2 justify-between lg:gap-10">
-            <!-- Product Image -->
-            <div class="lg:sticky lg:top-[148px] h-fit">
-                <img src="assets/img/item-1.jpg" alt="Perfume Product Image"
-                    class="w-full h-80 object-cover transition-transform duration-500 hover:scale-105" />
+            <!-- Product Image with Zoom Feature -->
+            <div class="lg:sticky lg:top-[148px] h-fit relative group">
+                <!-- Main Image -->
+                <img src="assets/img/item-1.jpg" alt="Perfume Product Image" class="w-full h-64 sm:h-80 md:h-96 lg:h-80 object-cover" />
+
+                <!-- Zoom Box -->
+                <div class="absolute inset-0 hidden group-hover:flex justify-center items-center hover:cursor-zoom-in">
+                    <div
+                        class="zoom-box w-full h-full overflow-hidden rounded-lg border-1 border-gray-200 bg-white shadow-lg flex items-center justify-center">
+                        <img src="assets/img/item-1.jpg" alt="Zoomed Image"
+                            class="zoomed-image w-auto h-auto transition-transform duration-300 ease-in-out" />
+                    </div>
+                </div>
             </div>
+
 
             <!-- Product Content -->
             <div class="mt-10 lg:mt-0 poppins-regular">
@@ -84,7 +101,8 @@
                 <h1 class="text-3xl font-bold text-gray-900">Luxury Perfume - Essence of Elegance</h1>
 
                 <div class="flex gap-10 items-center mt-3">
-                    <span class="text-lg text-gray-900 inline-block"><i class="ri-star-s-fill text-2xl me-1 text-yellow-300"></i>4.7</span>
+                    <span class="text-lg text-gray-900 inline-block"><i
+                            class="ri-star-s-fill text-2xl me-1 text-yellow-300"></i>4.7</span>
                     <span class="text-md text-green-500 inline-block">In Stock</span>
                 </div>
                 <!-- Pricing -->
@@ -185,6 +203,39 @@
     </footer>
 
     <script src="assets/js/cart.js"></script>
+    <!-- scroll animation script link -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 150,
+            duration: 700,
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const productContainer = document.querySelector('.group');
+            const zoomBox = productContainer.querySelector('.zoom-box');
+            const zoomedImage = productContainer.querySelector('.zoomed-image');
+
+            productContainer.addEventListener('mouseenter', () => {
+                zoomBox.style.display = 'flex'; // Show the zoom box
+            });
+
+            productContainer.addEventListener('mousemove', (event) => {
+                const rect = productContainer.getBoundingClientRect();
+                const x = ((event.clientX - rect.left) / rect.width) * 100;
+                const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+                zoomedImage.style.transformOrigin = `${x}% ${y}%`; // Adjust zoom origin
+                zoomedImage.style.transform = 'scale(4)'; // Zoom in the image
+            });
+
+            productContainer.addEventListener('mouseleave', () => {
+                zoomBox.style.display = 'none'; // Hide the zoom box
+                zoomedImage.style.transform = 'scale(1)'; // Reset zoom
+            });
+        });
+
+    </script>
 
     <!-- JavaScript for Animations and Interactivity -->
     <!-- <script>
