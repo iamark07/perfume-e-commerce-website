@@ -16,6 +16,26 @@
   font-style: normal;
 }
 
+#mobile-menu ul::-webkit-scrollbar {
+  width: 10px;  /* Width of the scrollbar */
+}
+
+#mobile-menu ul::-webkit-scrollbar-track {
+  background: #bcbcbc;  /* Light gray background for the track */
+  border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+#mobile-menu ul::-webkit-scrollbar-thumb {
+  background: #7d7d7d;  /* Darker color for the thumb */
+  border-radius: 10px;  /* Rounded corners for the thumb */
+}
+
+
+#mobile-menu ul{
+  height: calc(100dvh - 160px);
+}
+
 /* Smooth image fade transition */
 .hero-image {
   transition: opacity 1s ease-in-out;

@@ -12,84 +12,128 @@
 
 <body class="bg-[#fff7ee] font-sans text-gray-800">
 
-    <!-- Header -->
     <header id="header"
-        class="header sticky top-0 !bg-gray-900 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
+        class="header sticky !bg-gray-900 top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
         <!-- Logo -->
         <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
 
         <!-- Navigation -->
         <nav class="hidden md:flex space-x-6 poppins-regular">
             <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-            <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
             <a href="about.html" class="text-white hover:text-gray-300">About</a>
+            <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
             <a href="contact.html" class="text-white hover:text-gray-300">Contact</a>
         </nav>
 
         <!-- Icons -->
         <div class="flex gap-1 md:gap-2 items-center space-x-4">
             <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
-            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer"></i></a>
-            <a href="login.html"><i class="ri-user-line text-white text-xl cursor-pointer"></i></a>
+
+            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer" title="Cart"></i></a>
+            <a href="login.html" class="hidden md:block"><i class="ri-user-line text-white text-xl cursor-pointer" title="Login"></i></a>
+            <div class="relative hidden md:block">
+                <div id="profile_btn"
+                    class="poppins-regular w-10 h-10 text-lg rounded-full bg-white shadow-md hidden md:flex items-center justify-center capitalize cursor-pointer">A
+                </div>
+                <div id="profile_dropdown"
+                    class="bg-white rounded-md shadow-md p-4 absolute top-full right-0 flex flex-col gap-2 mt-5 pointer-events-none opacity-0 transition-all duration-300">
+                    <a href="profile.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-account-circle-2-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Profile
+                    </a>
+                    <a href="admin/dashboard.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-user-settings-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Admin Panel"></i> Admin Panel
+                    </a>
+                    <a href="settings.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-settings-5-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Settings
+                    </a>
+                    <a href="#" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-logout-circle-r-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Log Out"></i> Log out
+                    </a>
+                </div>
+            </div>
+
             <button id="menu-btn" class="block md:hidden text-white text-xl">
                 <i class="ri-menu-line"></i>
             </button>
+
+
+        </div>
+        <!-- Search Box -->
+        <div id="search-box"
+            class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+            <div>
+                <form action="" class="flex items-center space-x-2 poppins-regular">
+                    <input type="text" placeholder="Search for perfumes..."
+                        class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none" />
+                    <button type="submit"
+                        class="py-2 px-3 bg-gray-900 transition-all duration-300 text-white rounded-lg">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
+            <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
+                <i class="ri-close-line"></i>
+            </button>
+            <nav class="text-white text-lg py-6 px-5">
+                <!-- Logo -->
+                <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+
+                <div
+                    class="mt-7 font-semibold poppins-regular text-lg rounded-sm text-white shadow-md flex items-center justify-center md:hidden capitalize">
+                    Hi, Name
+                </div>
+
+
+                <ul class="mt-7 flex flex-col gap-5 poppins-regular overflow-auto">
+                    <li><a href="index.html"><i class="ri-home-8-line text-xl me-2"></i>Home</a></li>
+                    <li><a href="about.html"><i class="ri-user-6-line text-xl me-2"></i>About</a></li>
+                    <li><a href="shop.html"><i class="ri-store-2-line text-xl me-2"></i>Shop</a></li>
+                    <li><a href="contact"><i class="ri-phone-line text-xl me-2"></i>Contact</a></li>
+
+                    <li><a href="cart.html"><i class="ri-shopping-cart-line text-xl me-2"></i>Cart</a></li>
+                    <li><a href="profile.html"><i class="ri-profile-line text-xl me-2"></i>Profile</a></li>
+
+                    <li><a href="admin/dashboard.html"><i class="ri-user-settings-line text-xl me-2"></i>Admin Panel</a></li>
+                    <li><a href="settings.html"><i class="ri-settings-5-line text-xl me-2"></i>Settings</a></li>
+                    <li><a href="#"><i class="ri-logout-circle-r-line text-xl me-2"></i>Log out</a>
+                    <li><a href="login.html"><i class="ri-login-circle-line text-xl me-2"></i>Login</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Search Box -->
-    <div id="search-box"
-        class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
-        <div>
-            <form action="" class="flex items-center space-x-2">
-                <input type="text" placeholder="Search for perfumes..."
-                    class="w-full border poppins-regular border-gray-300 p-2 rounded-lg focus:outline-none" />
-                <button type="submit" class="py-2 px-3 bg-gray-900 transition-all duration-300 text-white rounded-lg">
-                    <i class="ri-search-line"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
-        <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
-            <i class="ri-close-line"></i>
-        </button>
-        <nav class="text-white text-lg py-10 px-5">
-            <!-- Logo -->
-            <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
-            <ul class="mt-10 flex flex-col gap-5 poppins-regular">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Login Section -->
     <section class="login_section px-5 md:px-20 my-20 flex justify-center">
         <div class="w-full md:w-[600px] bg-white shadow-lg rounded-lg p-6 poppins-regular">
             <div class="w-full">
                 <!-- Login Form -->
                 <div class="w-full md:p-6">
                     <h1 class="text-2xl font-bold mb-6 text-center">Login to Your Account</h1>
-
-                    <form action="#" method="POST" class="grid gap-5">
+                    
+                    <form action="" method="POST" class="grid gap-5" id="loginForm">
                         <div class="col-span-2">
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" id="email" name="email" required
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email or Mobile</label>
+                            <input type="text" id="email" name="email"
                                 class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                            <p id="emailError" class="text-red-600 text-sm mt-1 hidden">Email is required.</p>
                         </div>
-
                         <div class="col-span-2">
                             <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                            <input type="password" id="password" name="password" required
-                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                            <div class="relative">
+                                <input type="password" id="password" name="password"
+                                    class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                                <i class="ri-eye-line pass_icon_show absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer text-lg" onclick="show_pass()"></i>
+                                <i class="ri-eye-off-line pass_icon_hide absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer hidden text-lg" onclick="hide_pass()"></i>
+                            </div>
+                            <p id="passwordError" class="text-red-600 text-sm mt-1 hidden">Password is required.</p>
                         </div>
-
                         <div class="col-span-2 mt-5">
                             <button type="submit"
                                 class="w-full bg-gray-900 hover:bg-gray-600 text-white text-lg py-3 px-6 rounded-lg shadow-md transition-all duration-300">
@@ -104,12 +148,64 @@
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <script src="assets/js/cart.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Prevent the form from submitting
+            event.preventDefault();
+
+            // Get the input fields and error message elements
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+
+            // Initialize validation status
+            let isValid = true;
+
+            // Validate email
+            if (emailInput.value.trim() === '') {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-red-600');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-red-600');
+            }
+
+            // Validate password
+            if (passwordInput.value.trim() === '') {
+                passwordError.classList.remove('hidden');
+                passwordInput.classList.add('border-red-600');
+                isValid = false;
+            } else {
+                passwordError.classList.add('hidden');
+                passwordInput.classList.remove('border-red-600');
+            }
+
+            // Submit the form if valid
+            if (isValid) {
+                this.submit();
+            }
+        });
+
+        function show_pass() {
+            document.querySelector("#password").setAttribute("type", "text");
+            document.querySelector(".pass_icon_show").classList.add("hidden");
+            document.querySelector(".pass_icon_hide").classList.add("!block");
+        }
+
+        function hide_pass() {
+            document.querySelector("#password").setAttribute("type", "password");
+            document.querySelector(".pass_icon_show").classList.remove("hidden");
+            document.querySelector(".pass_icon_hide").classList.remove("!block");
+        }
+    </script>
 
 </body>
+
 </html>

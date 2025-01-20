@@ -28,22 +28,110 @@
 <body class="bg-[#f9f7f2] font-sans text-gray-800">
 
     <!-- Header -->
-    <header class="header sticky top-0 bg-gray-900 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center shadow-lg">
-        <div class="text-white text-xl font-bold hover:scale-105 transition-transform duration-300"><a href="index.html">PerfumeBrand</a></div>
-        <nav class="hidden md:flex space-x-6">
-            <a href="index.html" class="text-white hover:text-gray-300 transition">Home</a>
-            <a href="shop.html" class="text-white hover:text-gray-300 transition">Shop</a>
-            <a href="about.html" class="text-white hover:text-gray-300 transition">About Us</a>
-            <a href="contact.html" class="text-white hover:text-gray-300 transition">Contact</a>
+    <header id="header"
+        class="header sticky !bg-gray-900 top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
+        <!-- Logo -->
+        <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-6 poppins-regular">
+            <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+            <a href="about.html" class="text-white hover:text-gray-300">About</a>
+            <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
+            <a href="contact.html" class="text-white hover:text-gray-300">Contact</a>
         </nav>
-        <div class="flex gap-2 items-center">
-            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl"></i></a>
-            <a href="profile-dashboard.html"><i class="ri-user-line text-white text-xl"></i></a>
+
+        <!-- Icons -->
+        <div class="flex gap-1 md:gap-2 items-center space-x-4">
+            <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
+
+            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer" title="Cart"></i></a>
+            <a href="login.html" class="hidden md:block"><i class="ri-user-line text-white text-xl cursor-pointer"
+                    title="Login"></i></a>
+            <div class="relative hidden md:block">
+                <div id="profile_btn"
+                    class="poppins-regular w-10 h-10 text-lg rounded-full bg-white shadow-md hidden md:flex items-center justify-center capitalize cursor-pointer">
+                    A
+                </div>
+                <div id="profile_dropdown"
+                    class="bg-white rounded-md shadow-md p-4 absolute top-full right-0 flex flex-col gap-2 mt-5 pointer-events-none opacity-0 transition-all duration-300">
+                    <a href="profile.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-account-circle-2-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Profile
+                    </a>
+                    <a href="admin/dashboard.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-user-settings-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Admin Panel"></i> Admin Panel
+                    </a>
+                    <a href="settings.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-settings-5-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Settings
+                    </a>
+                    <a href="#" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-logout-circle-r-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Log Out"></i> Log out
+                    </a>
+                </div>
+            </div>
+
+            <button id="menu-btn" class="block md:hidden text-white text-xl">
+                <i class="ri-menu-line"></i>
+            </button>
+
+
+        </div>
+        <!-- Search Box -->
+        <div id="search-box"
+            class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+            <div>
+                <form action="" class="flex items-center space-x-2 poppins-regular">
+                    <input type="text" placeholder="Search for perfumes..."
+                        class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none" />
+                    <button type="submit"
+                        class="py-2 px-3 bg-gray-900 transition-all duration-300 text-white rounded-lg">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
+            <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
+                <i class="ri-close-line"></i>
+            </button>
+            <nav class="text-white text-lg py-6 px-5">
+                <!-- Logo -->
+                <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+
+                <div
+                    class="mt-7 font-semibold poppins-regular text-lg rounded-sm text-white shadow-md flex items-center justify-center md:hidden capitalize">
+                    Hi, Name
+                </div>
+
+
+                <ul class="mt-7 flex flex-col gap-5 poppins-regular overflow-auto">
+                    <li><a href="index.html"><i class="ri-home-8-line text-xl me-2"></i>Home</a></li>
+                    <li><a href="about.html"><i class="ri-user-6-line text-xl me-2"></i>About</a></li>
+                    <li><a href="shop.html"><i class="ri-store-2-line text-xl me-2"></i>Shop</a></li>
+                    <li><a href="contact"><i class="ri-phone-line text-xl me-2"></i>Contact</a></li>
+
+                    <li><a href="cart.html"><i class="ri-shopping-cart-line text-xl me-2"></i>Cart</a></li>
+                    <li><a href="profile.html"><i class="ri-profile-line text-xl me-2"></i>Profile</a></li>
+
+                    <li><a href="admin/dashboard.html"><i class="ri-user-settings-line text-xl me-2"></i>Admin Panel</a>
+                    </li>
+                    <li><a href="settings.html"><i class="ri-settings-5-line text-xl me-2"></i>Settings</a></li>
+                    <li><a href="#"><i class="ri-logout-circle-r-line text-xl me-2"></i>Log out</a>
+                    <li><a href="login.html"><i class="ri-login-circle-line text-xl me-2"></i>Login</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-cover bg-center bg-no-repeat h-[50vh] relative" style="background-image: url('assets/img/about.jpg');">
+    <section class="bg-cover bg-center bg-no-repeat h-[50vh] relative"
+        style="background-image: url('assets/img/about.jpg');">
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <h1 class="text-white text-4xl md:text-5xl font-bold">Frequently Asked Questions</h1>
         </div>
@@ -57,65 +145,78 @@
 
                 <!-- FAQ Item 1 -->
                 <div class="faq-item">
-                    <button class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
+                    <button
+                        class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
                         onclick="toggleAnswer(1)">
                         What is PerfumeBrand?
                     </button>
                     <div id="answer1" class="faq-answer px-4 my-4">
                         <p class="text-gray-700">
-                            PerfumeBrand is a premium fragrance company that offers a wide range of luxury perfumes. We focus on creating unique, long-lasting scents that inspire emotions and memories. Our mission is to provide the finest fragrances for every individual.
+                            PerfumeBrand is a premium fragrance company that offers a wide range of luxury perfumes. We
+                            focus on creating unique, long-lasting scents that inspire emotions and memories. Our
+                            mission is to provide the finest fragrances for every individual.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
                 <div class="faq-item">
-                    <button class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
+                    <button
+                        class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
                         onclick="toggleAnswer(2)">
                         How can I order a perfume from PerfumeBrand?
                     </button>
                     <div id="answer2" class="faq-answer px-4 my-4">
                         <p class="text-gray-700">
-                            You can easily place an order through our online shop. Simply visit our "Shop" page, choose your desired perfumes, add them to your cart, and proceed with the checkout process.
+                            You can easily place an order through our online shop. Simply visit our "Shop" page, choose
+                            your desired perfumes, add them to your cart, and proceed with the checkout process.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
                 <div class="faq-item">
-                    <button class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
+                    <button
+                        class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
                         onclick="toggleAnswer(3)">
                         Do you offer international shipping?
                     </button>
                     <div id="answer3" class="faq-answer px-4 my-4">
                         <p class="text-gray-700">
-                            Yes, we offer international shipping! We deliver our products to a wide range of countries. During the checkout process, you can select your country, and shipping options will be provided.
+                            Yes, we offer international shipping! We deliver our products to a wide range of countries.
+                            During the checkout process, you can select your country, and shipping options will be
+                            provided.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 4 -->
                 <div class="faq-item">
-                    <button class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
+                    <button
+                        class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
                         onclick="toggleAnswer(4)">
                         Can I return or exchange a product?
                     </button>
                     <div id="answer4" class="faq-answer px-4 my-4">
                         <p class="text-gray-700">
-                            We have a 30-day return policy. If you're not completely satisfied with your purchase, you can return or exchange the product within 30 days of receiving it. For more details, check our return policy page.
+                            We have a 30-day return policy. If you're not completely satisfied with your purchase, you
+                            can return or exchange the product within 30 days of receiving it. For more details, check
+                            our return policy page.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 5 -->
                 <div class="faq-item">
-                    <button class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
+                    <button
+                        class="w-full text-left text-lg font-semibold text-gray-800 bg-white border p-4 rounded-md shadow-md hover:bg-gray-100 transition-all"
                         onclick="toggleAnswer(5)">
                         How do I track my order?
                     </button>
                     <div id="answer5" class="faq-answer px-4 my-4">
                         <p class="text-gray-700">
-                            Once your order has been shipped, you'll receive a tracking number via email. You can use this tracking number to monitor the delivery status on our shipping partner's website.
+                            Once your order has been shipped, you'll receive a tracking number via email. You can use
+                            this tracking number to monitor the delivery status on our shipping partner's website.
                         </p>
                     </div>
                 </div>

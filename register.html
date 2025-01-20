@@ -12,128 +12,174 @@
 
 <body class="bg-[#fff7ee] font-sans text-gray-800">
 
-    <!-- Header -->
     <header id="header"
-        class="header sticky top-0 !bg-gray-900 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
+        class="header sticky !bg-gray-900 top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
         <!-- Logo -->
         <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
 
         <!-- Navigation -->
         <nav class="hidden md:flex space-x-6 poppins-regular">
             <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-            <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
             <a href="about.html" class="text-white hover:text-gray-300">About</a>
+            <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
             <a href="contact.html" class="text-white hover:text-gray-300">Contact</a>
         </nav>
 
         <!-- Icons -->
         <div class="flex gap-1 md:gap-2 items-center space-x-4">
             <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
-            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer"></i></a>
-            <a href="login.html"><i class="ri-user-line text-white text-xl cursor-pointer"></i></a>
+
+            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer" title="Cart"></i></a>
+            <a href="login.html" class="hidden md:block"><i class="ri-user-line text-white text-xl cursor-pointer"
+                    title="Login"></i></a>
+            <div class="relative hidden md:block">
+                <div id="profile_btn"
+                    class="poppins-regular w-10 h-10 text-lg rounded-full bg-white shadow-md hidden md:flex items-center justify-center capitalize cursor-pointer">
+                    A
+                </div>
+                <div id="profile_dropdown"
+                    class="bg-white rounded-md shadow-md p-4 absolute top-full right-0 flex flex-col gap-2 mt-5 pointer-events-none opacity-0 transition-all duration-300">
+                    <a href="profile.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-account-circle-2-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Profile
+                    </a>
+                    <a href="admin/dashboard.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-user-settings-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Admin Panel"></i> Admin Panel
+                    </a>
+                    <a href="settings.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-settings-5-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Settings
+                    </a>
+                    <a href="#" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-logout-circle-r-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Log Out"></i> Log out
+                    </a>
+                </div>
+            </div>
+
             <button id="menu-btn" class="block md:hidden text-white text-xl">
                 <i class="ri-menu-line"></i>
             </button>
+
+
+        </div>
+        <!-- Search Box -->
+        <div id="search-box"
+            class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+            <div>
+                <form action="" class="flex items-center space-x-2 poppins-regular">
+                    <input type="text" placeholder="Search for perfumes..."
+                        class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none" />
+                    <button type="submit"
+                        class="py-2 px-3 bg-gray-900 transition-all duration-300 text-white rounded-lg">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
+            <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
+                <i class="ri-close-line"></i>
+            </button>
+            <nav class="text-white text-lg py-6 px-5">
+                <!-- Logo -->
+                <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+
+                <div
+                    class="mt-7 font-semibold poppins-regular text-lg rounded-sm text-white shadow-md flex items-center justify-center md:hidden capitalize">
+                    Hi, Name
+                </div>
+
+
+                <ul class="mt-7 flex flex-col gap-5 poppins-regular overflow-auto">
+                    <li><a href="index.html"><i class="ri-home-8-line text-xl me-2"></i>Home</a></li>
+                    <li><a href="about.html"><i class="ri-user-6-line text-xl me-2"></i>About</a></li>
+                    <li><a href="shop.html"><i class="ri-store-2-line text-xl me-2"></i>Shop</a></li>
+                    <li><a href="contact"><i class="ri-phone-line text-xl me-2"></i>Contact</a></li>
+
+                    <li><a href="cart.html"><i class="ri-shopping-cart-line text-xl me-2"></i>Cart</a></li>
+                    <li><a href="profile.html"><i class="ri-profile-line text-xl me-2"></i>Profile</a></li>
+
+                    <li><a href="admin/dashboard.html"><i class="ri-user-settings-line text-xl me-2"></i>Admin Panel</a>
+                    </li>
+                    <li><a href="settings.html"><i class="ri-settings-5-line text-xl me-2"></i>Settings</a></li>
+                    <li><a href="#"><i class="ri-logout-circle-r-line text-xl me-2"></i>Log out</a>
+                    <li><a href="login.html"><i class="ri-login-circle-line text-xl me-2"></i>Login</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Search Box -->
-    <div id="search-box"
-        class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
-        <div>
-            <form action="" class="flex items-center space-x-2">
-                <input type="text" placeholder="Search for perfumes..."
-                    class="w-full border poppins-regular border-gray-300 p-2 rounded-lg focus:outline-none" />
-                <button type="submit" class="py-2 px-3 bg-gray-900 transition-all duration-300 text-white rounded-lg">
-                    <i class="ri-search-line"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
-        <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
-            <i class="ri-close-line"></i>
-        </button>
-        <nav class="text-white text-lg py-10 px-5">
-            <!-- Logo -->
-            <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
-            <ul class="mt-10 flex flex-col gap-5 poppins-regular">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-
     <!-- Register Section -->
-    <section class="register_section px-5 md:px-20 my-20 flex justify-center">
+    <section class="register_section px-5 md:px-20 my-20 flex flex-col items-center justify-center">
+
         <div class="w-full md:w-[650px] bg-white shadow-lg rounded-lg p-6 poppins-regular">
             <div class="w-full">
-                <!-- Registration Form -->
                 <div class="w-full md:p-6">
                     <h1 class="text-2xl font-bold mb-6">Create an Account</h1>
 
-                    <form action="#" method="POST" class="grid gap-5 grid-cols-2">
+                    <!-- Laravel Form Start -->
+                    <form id="register-form" action="" method="POST" class="grid gap-5 grid-cols-2">
+
                         <div class="col-span-2 lg:col-span-1">
-                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                            <input type="text" id="name" name="name" required
+                            <label for="full_name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="full_name" name="full_name"
                                 class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                            <span id="name-error" class="text-red-500 text-sm"></span> <!-- Error message -->
                         </div>
 
                         <div class="col-span-2 lg:col-span-1">
                             <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" id="email" name="email" required
+                            <input type="email" id="email" name="email"
                                 class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                            <span id="email-error" class="text-red-500 text-sm"></span> <!-- Error message -->
                         </div>
 
                         <div class="col-span-2">
                             <label for="phone" class="block text-sm font-medium text-gray-700">Mobile No</label>
-                            <input type="text" id="phone" name="phone" required
+                            <input type="text" id="phone" name="phone"
                                 class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                            <span id="phone-error" class="text-red-500 text-sm"></span> <!-- Error message -->
                         </div>
 
                         <div class="col-span-2">
                             <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                            <input type="password" id="password" name="password" required
-                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                            <div class="relative">
+                                <input type="password" id="password" name="password"
+                                    class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none password-field">
+                                <i class="ri-eye-line pass_icon_show absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer text-lg"
+                                    onclick="show_pass(this)"></i>
+                                <i class="ri-eye-off-line pass_icon_hide absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer hidden text-lg"
+                                    onclick="hide_pass(this)"></i>
+                            </div>
+                            <span id="password-error" class="text-red-500 text-sm"></span> <!-- Error message -->
                         </div>
 
                         <div class="col-span-2">
-                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm
+                            <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Confirm
                                 Password</label>
-                            <input type="password" id="confirmPassword" name="confirmPassword" required
-                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
-                        </div>
-
-                        <div class="col-span-2">
-                            <label for="userType" class="block text-sm font-medium text-gray-700">Register As</label>
-                            <select id="userType" name="userType" required
-                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
-                                <option value="user">User</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </div>
-
-                        <!-- Hidden Admin Code Input -->
-                        <div id="adminCodeField" class="col-span-2" style="display: none;">
-                            <label for="adminCode" class="block text-sm font-medium text-gray-700">Admin Code</label>
-                            <input type="text" id="adminCode" name="adminCode"
-                                class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                            <div class="relative">
+                                <input type="password" id="password_confirmation" name="password_confirmation"
+                                    class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none password-field">
+                                <i class="ri-eye-line pass_icon_show absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer text-lg"
+                                    onclick="show_pass(this)"></i>
+                                <i class="ri-eye-off-line pass_icon_hide absolute top-1/2 right-5 -translate-y-1/2 cursor-pointer hidden text-lg"
+                                    onclick="hide_pass(this)"></i>
+                            </div>
+                            <span id="confirmPassword-error" class="text-red-500 text-sm"></span> <!-- Error message -->
                         </div>
 
                         <div class="col-span-2 mt-5">
                             <button type="submit"
-                                class="w-full bg-gray-900 hover:bg-gray-600 text-white text-lg py-3 px-6 rounded-lg shadow-md transition-all duration-300">
-                                Register
-                            </button>
+                                class="w-full bg-gray-900 hover:bg-gray-600 text-white text-lg py-3 px-6 rounded-lg shadow-md transition-all duration-300">Register</button>
                         </div>
                     </form>
-                </div>
+                    <!-- Laravel Form End -->
 
+                </div>
             </div>
 
             <div class="text-center my-5">
@@ -142,24 +188,102 @@
                 </p>
             </div>
         </div>
-
-
     </section>
 
     <script src="assets/js/cart.js"></script>
 
     <script>
-        // JavaScript to toggle the admin code field
-        const userTypeSelect = document.getElementById('userType');
-        const adminCodeField = document.getElementById('adminCodeField');
-    
-        userTypeSelect.addEventListener('change', function () {
-            if (userTypeSelect.value === 'admin') {
-                adminCodeField.style.display = 'block';
-            } else {
-                adminCodeField.style.display = 'none';
+        // form validation JavaScript code goes here
+        // form validation 
+        document.getElementById('register-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+            let valid = true;
+
+            // Clear previous error messages
+            document.querySelectorAll('.text-red-500').forEach(el => el.textContent = '');
+
+            // Validate Full Name
+            const name = document.getElementById('full_name').value.trim();
+            if (name.length < 3) {
+                document.getElementById('name-error').textContent = 'Full name must be at least 3 characters.';
+                valid = false;
+            }
+
+            // Validate Email
+            const email = document.getElementById('email').value.trim();
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                valid = false;
+            }
+
+            // Validate Mobile No
+            const phone = document.getElementById('phone').value.trim();
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById('phone-error').textContent = 'Please enter a valid 10-digit mobile number.';
+                valid = false;
+            }
+
+            // Validate Password
+            const password = document.getElementById('password').value.trim();
+            if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'Password must be at least 6 characters.';
+                valid = false;
+            }
+
+            // Validate Confirm Password
+            const confirmPassword = document.getElementById('password_confirmation').value.trim();
+            if (confirmPassword !== password) {
+                document.getElementById('confirmPassword-error').textContent = 'Passwords do not match.';
+                valid = false;
+            }
+
+            // If valid, submit the form
+            if (valid) {
+                console.log('Form validation passed. Submitting form...');
+                e.target.submit(); // Use e.target to refer to the form being submitted
             }
         });
+
+
+
+        // // Show/Hide Admin Code Input
+        // document.getElementById('userType').addEventListener('change', function() {
+        //     const adminCodeField = document.getElementById('adminCodeField');
+        //     if (this.value === 'admin') {
+        //         adminCodeField.style.display = 'block';
+        //     } else {
+        //         adminCodeField.style.display = 'none';
+        //     }
+        // });
+
+
+
+        // hide or show password
+        function show_pass(icon) {
+            // Find the corresponding input field using the passed icon
+            let inputField = icon.closest('.relative').querySelector('input');
+
+            // Show password by changing the input type to 'text'
+            inputField.type = 'text';
+
+            // Toggle visibility icons
+            icon.classList.add('hidden');
+            icon.nextElementSibling.classList.remove('hidden');
+        }
+
+        function hide_pass(icon) {
+            // Find the corresponding input field using the passed icon
+            let inputField = icon.closest('.relative').querySelector('input');
+
+            // Hide password by changing the input type back to 'password'
+            inputField.type = 'password';
+
+            // Toggle visibility icons
+            icon.classList.add('hidden');
+            icon.previousElementSibling.classList.remove('hidden');
+        }
     </script>
 
 </body>

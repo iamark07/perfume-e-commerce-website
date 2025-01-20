@@ -5,63 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- tailwind css cdn link -->
+    <!-- Tailwind CSS CDN link -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- scroll animation css cdn link -->
+    <!-- Scroll animation CSS CDN link -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- rimix icon cdn link -->
+    <!-- Remix icon CDN link -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
-    <!-- custom css -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Perfume E-commerce</title>
 </head>
 
 <body class="bg-[#fff7ee] font-sans text-gray-800">
-    <!-- Hero Section -->
-    <div id="hero" class="relative h-[100dvh] bg-gray-900 overflow-hidden">
 
-        <!-- Dark Overlay -->
-        <div class="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-20 z-10"></div>
+    <header id="header"
+        class="header fixed top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
+        <!-- Logo -->
+        <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
 
-        <!-- Images for the carousel -->
-        <div class="absolute inset-0 w-full h-full">
-            <img src="assets/img/slider-1.jpg" alt="Hero Image 1"
-                class="hero-image absolute inset-0 w-full h-full object-cover object-left opacity-100">
-            <img src="assets/img/slider-2.jpg" alt="Hero Image 2"
-                class="hero-image absolute inset-0 w-full h-full object-cover object-left opacity-0">
-            <img src="assets/img/slider-3.jpg" alt="Hero Image 3"
-                class="hero-image absolute inset-0 w-full h-full object-cover object-center opacity-0">
-        </div>
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-6 poppins-regular">
+            <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+            <a href="about.html" class="text-white hover:text-gray-300">About</a>
+            <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
+            <a href="contact.html" class="text-white hover:text-gray-300">Contact</a>
+        </nav>
 
-        <!-- Header -->
-        <header id="header"
-            class="header fixed top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
-            <!-- Logo -->
-            <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
+        <!-- Icons -->
+        <div class="flex gap-1 md:gap-2 items-center space-x-4">
+            <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
 
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-6 poppins-regular">
-                <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-                <a href="shop.html" class="text-white hover:text-gray-300">Shop</a>
-                <a href="about.html" class="text-white hover:text-gray-300">About</a>
-                <a href="contact.html" class="text-white hover:text-gray-300">Contact</a>
-            </nav>
-
-            <!-- Icons -->
-            <div class="flex gap-1 md:gap-2 items-center space-x-4">
-                <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
-                <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer"></i></a>
-                <a href="login.html"><i class="ri-user-line text-white text-xl cursor-pointer"></i></a>
-                <button id="menu-btn" class="block md:hidden text-white text-xl">
-                    <i class="ri-menu-line"></i>
-                </button>
+            <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer" title="Cart"></i></a>
+            <a href="login.html" class="hidden md:block"><i class="ri-user-line text-white text-xl cursor-pointer" title="Login"></i></a>
+            <div class="relative hidden md:block">
+                <div id="profile_btn"
+                    class="poppins-regular w-10 h-10 text-lg rounded-full bg-white shadow-md hidden md:flex items-center justify-center capitalize cursor-pointer">A
+                </div>
+                <div id="profile_dropdown"
+                    class="bg-white rounded-md shadow-md p-4 absolute top-full right-0 flex flex-col gap-2 mt-5 pointer-events-none opacity-0 transition-all duration-300">
+                    <a href="profile.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-account-circle-2-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Profile
+                    </a>
+                    <a href="admin/dashboard.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-user-settings-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Admin Panel"></i> Admin Panel
+                    </a>
+                    <a href="settings.html" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-settings-5-line text-black text-xl cursor-pointer me-[7px]"
+                            title="Profile"></i>Settings
+                    </a>
+                    <a href="#" class="hidden md:flex items-center text-nowrap text-sm">
+                        <i class="ri-logout-circle-r-line text-black text-lg cursor-pointer me-[7px]"
+                            title="Log Out"></i> Log out
+                    </a>
+                </div>
             </div>
-        </header>
 
+            <button id="menu-btn" class="block md:hidden text-white text-xl">
+                <i class="ri-menu-line"></i>
+            </button>
+
+
+        </div>
         <!-- Search Box -->
         <div id="search-box"
             class="fixed w-72 md:w-96 z-20 top-10 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300">
@@ -76,36 +86,66 @@
                 </form>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
+            <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
+                <i class="ri-close-line"></i>
+            </button>
+            <nav class="text-white text-lg py-6 px-5">
+                <!-- Logo -->
+                <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
 
+                <div
+                    class="mt-7 font-semibold poppins-regular text-lg rounded-sm text-white shadow-md flex items-center justify-center md:hidden capitalize">
+                    Hi, Name
+                </div>
+
+
+                <ul class="mt-7 flex flex-col gap-5 poppins-regular overflow-auto">
+                    <li><a href="index.html"><i class="ri-home-8-line text-xl me-2"></i>Home</a></li>
+                    <li><a href="about.html"><i class="ri-user-6-line text-xl me-2"></i>About</a></li>
+                    <li><a href="shop.html"><i class="ri-store-2-line text-xl me-2"></i>Shop</a></li>
+                    <li><a href="contact"><i class="ri-phone-line text-xl me-2"></i>Contact</a></li>
+
+                    <li><a href="cart.html"><i class="ri-shopping-cart-line text-xl me-2"></i>Cart</a></li>
+                    <li><a href="profile.html"><i class="ri-profile-line text-xl me-2"></i>Profile</a></li>
+
+                    <li><a href="admin/dashboard.html"><i class="ri-user-settings-line text-xl me-2"></i>Admin Panel</a></li>
+                    <li><a href="settings.html"><i class="ri-settings-5-line text-xl me-2"></i>Settings</a></li>
+                    <li><a href="#"><i class="ri-logout-circle-r-line text-xl me-2"></i>Log out</a>
+                    <li><a href="login.html"><i class="ri-login-circle-line text-xl me-2"></i>Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div id="hero" class="relative h-[100dvh] bg-gray-900 overflow-hidden">
+        <!-- Dark Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-20 z-10"></div>
+
+        <!-- Images for the carousel -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="assets/img/slider-1.jpg" alt="Hero Image 1"
+                class="hero-image absolute inset-0 w-full h-full object-cover object-left opacity-100">
+            <img src="assets/img/slider-2.jpg" alt="Hero Image 2"
+                class="hero-image absolute inset-0 w-full h-full object-cover object-left opacity-0">
+            <img src="assets/img/slider-3.jpg" alt="Hero Image 3"
+                class="hero-image absolute inset-0 w-full h-full object-cover object-center opacity-0">
+        </div>
+        
         <!-- Hero Content -->
         <div
             class="absolute poppins-regular inset-0 z-10 flex flex-col justify-center items-center text-center text-white px-4 mt-32">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover Your Fragrance</h1>
             <p class="text-lg md:text-xl">Experience luxury with every scent</p>
-            <button
-                class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-600 transition-all duration-300">Shop
-                Now</button>
+            <a href="shop.html" class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-600 transition-all duration-300">Shop Now</a>
         </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed z-50 inset-0 bg-black bg-opacity-90 flex-col justify-center items-center transition-transform transform -translate-x-full">
-        <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">
-            <i class="ri-close-line"></i>
-        </button>
-        <nav class="text-white text-lg py-10 px-5">
-            <!-- Logo -->
-            <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
-            <ul class="mt-10 flex flex-col gap-5 poppins-regular">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-
+    
+    
     <section class="brand-logo_container w-full bg-white py-3 md:py-5">
         <marquee behavior="" direction="">
             <div class="brand_logo flex items-center whitespace-nowrap gap-7 md:gap-16">
@@ -336,35 +376,29 @@
             class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Next</a>
     </div>
 
-    <footer class="bg-gray-900 text-white mt-10 poppins-regular" data-aos="fade-up">
+    <footer class="bg-gray-900 text-white mt-10 poppins-regular">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-
                 <!-- Brand Section -->
                 <div>
                     <h2 class="text-lg font-bold"><a href="index.html">PerfumeBrand</a></h2>
-                    <p class="text-gray-400 mt-4">
-                        Discover a world of enchanting fragrances. From timeless classics to modern favorites, Perfume
-                        Haven has it all.
-                    </p>
+                    <p class="text-gray-400 mt-4">Discover a world of enchanting fragrances. From timeless classics to modern favorites, Perfume Haven has it all.</p>
                 </div>
-
+    
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Quick Links
-                    </h3>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="index.html" class="hover:text-white">Home</a></li>
-                        <li><a href="#" class="hover:text-white">Shop</a></li>
+                        <li><a href="shop.html" class="hover:text-white">Shop</a></li>
                         <li><a href="about.html" class="hover:text-white">About Us</a></li>
                         <li><a href="contact.html" class="hover:text-white">Contact</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Customer Service -->
                 <div>
-                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Customer
-                        Service</h3>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Customer Service</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="faq.html" class="hover:text-white">FAQs</a></li>
                         <li><a href="#" class="hover:text-white">Shipping Policy</a></li>
@@ -372,11 +406,10 @@
                         <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Newsletter Subscription -->
                 <div>
-                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Stay Updated
-                    </h3>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Stay Updated</h3>
                     <p class="text-gray-400">Subscribe to our newsletter to get the latest deals and updates.</p>
                     <form class="mt-4 flex">
                         <input type="email" placeholder="Your Email"
@@ -386,21 +419,23 @@
                     </form>
                 </div>
             </div>
-
+    
             <!-- Social Media Links -->
             <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
                 <p class="text-gray-400">&copy; 2025 Perfume Haven. All rights reserved.</p>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="ri-linkedin-box-fill text-3xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="ri-twitter-fill text-3xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="ri-instagram-fill text-3xl"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="ri-facebook-fill text-xl"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="ri-instagram-fill text-xl"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="ri-twitter-fill text-xl"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="ri-linkedin-fill text-xl"></i></a>
                 </div>
             </div>
         </div>
     </footer>
+    
 
+    <!-- Scripts -->
     <script src="assets/js/script.js"></script>
-    <!-- scroll animation script link -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({

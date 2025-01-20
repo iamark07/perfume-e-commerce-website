@@ -57,23 +57,40 @@ closeMenu.addEventListener("click", () => {
 });
 
 
+const profile_btn = document.getElementById("profile_btn");
+const profile_dropdown = document.getElementById("profile_dropdown");
+
+// Toggle search box
+profile_btn.addEventListener("click", () => {
+  profile_dropdown.classList.toggle("opacity-100");
+  profile_dropdown.classList.toggle("pointer-events-auto");
+  // profile_dropdown.classList.toggle("top-20");
+});
+
+// Close search box when clicking outside of it
+document.addEventListener("click", (event) => {
+  const isClickInsideprofile_dropdown = profile_dropdown.contains(event.target);
+  const isClickOnprofile_btn = profile_btn.contains(event.target);
+
+  if (!isClickInsideprofile_dropdown && !isClickOnprofile_btn) {
+    profile_dropdown.classList.remove("opacity-100", "pointer-events-auto");
+  }
+});
 
 
 // Get references to the elements
-const sortButton = document.getElementById('sortButton');
-const sortOptions = document.getElementById('sortOptions');
-const filterButton = document.getElementById('filterButton');
-const filterOptions = document.getElementById('filterOptions');
+const sortButton = document.getElementById("sortButton");
+const sortOptions = document.getElementById("sortOptions");
+const filterButton = document.getElementById("filterButton");
+const filterOptions = document.getElementById("filterOptions");
 
 // Add click event listener to the sort button
-sortButton.addEventListener('click', () => {
+sortButton.addEventListener("click", () => {
   // Toggle the visibility of the dropdown menu
-  sortOptions.classList.toggle('show_sort');
+  sortOptions.classList.toggle("show_sort");
 });
 // Add click event listener to the sort button
-filterButton.addEventListener('click', () => {
+filterButton.addEventListener("click", () => {
   // Toggle the visibility of the dropdown menu
-  filterOptions.classList.toggle('show_filter');
+  filterOptions.classList.toggle("show_filter");
 });
-
-
