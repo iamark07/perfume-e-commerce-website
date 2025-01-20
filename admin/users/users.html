@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/admin-style.css">
+    <link rel="stylesheet" href="../../assets/css/admin-style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .table_overflow::-webkit-scrollbar {
@@ -28,8 +28,7 @@
             <div class="">
                 <h1 class="text-2xl font-bold">Admin Panel</h1>
             </div>
-            <ul class="space-y-1 mt-10 hidden lg:block w-full">
-
+            <ul class="admin-menu space-y-1 mt-10 hidden lg:block w-full overflow-auto pe-2">
                 <li>
                     <a href="../dashboard.html" class="text-lg px-3 py-2 inline-block w-full"><i
                             class="ri-dashboard-line text-white me-2 text-xl"></i>Dashboard</a>
@@ -41,6 +40,9 @@
                 <li>
                     <a href="../products/products.html" class="text-lg px-3 py-2 inline-block w-full"><i
                             class="ri-ink-bottle-line text-white me-2 text-xl"></i>Products</a>
+                </li>
+                <li>
+                    <a href="../carts-details.html" class="text-lg px-3 py-2 inline-block w-full"><i class="ri-shopping-cart-line text-white me-2 text-xl"></i>Cart</a>
                 </li>
                 <li>
                     <a href="../brands/brands.html" class="text-lg px-3 py-2 inline-block w-full"><i
@@ -87,6 +89,10 @@
                     <li class="hover:bg-gray-700 rounded-md w-full">
                         <a href="../products/products.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
                                 class="ri-ink-bottle-line text-white me-2 text-xl"></i>Products</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../carts-detail.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-shopping-cart-line text-white me-2 text-xl"></i>Cart</a>
                     </li>
                     <li class="hover:bg-gray-700 rounded-md w-full">
                         <a href="../brands/brands.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
@@ -211,6 +217,19 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="max-w-6xl mx-auto flex justify-center items-center space-x-2 p-4 poppins-regular" data-aos="fade-up">
+                    <a href="#page1"
+                        class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Prev</a>
+                    <a href="#page1" class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-gray-900 text-white">1</a>
+                    <a href="#page2"
+                        class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">2</a>
+                    <a href="#page3"
+                        class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">3</a>
+                    <a href="#page2"
+                        class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Next</a>
                 </div>
             </div>
         </div>

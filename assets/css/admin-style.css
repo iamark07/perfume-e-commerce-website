@@ -10,6 +10,24 @@
   scroll-behavior: smooth;
 }
 
+.admin-menu{
+    height: calc(100dvh - 112px) !important;
+}
+
+.admin-menu::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.admin-menu::-webkit-scrollbar-track {
+  background: #bcbcbc; /* Light gray background for the track */
+  border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+.admin-menu::-webkit-scrollbar-thumb {
+  background: #7d7d7d; /* Darker color for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
 #admin-mobile-menu::-webkit-scrollbar {
   width: 10px; /* Width of the scrollbar */
 }
