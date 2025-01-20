@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Brands</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/admin-style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,7 +34,7 @@
                             class="ri-dashboard-line text-white me-2 text-xl"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="users.html" class="text-lg px-3 py-2 inline-block bg-gray-700 rounded-md w-full"><i
+                    <a href="../users/users.html" class="text-lg px-3 py-2 inline-block w-full"><i
                             class="ri-group-2-line text-white me-2 text-xl"></i>Users</a>
                 </li>
                 <li>
@@ -45,7 +45,7 @@
                     <a href="../carts-details.html" class="text-lg px-3 py-2 inline-block w-full"><i class="ri-shopping-cart-line text-white me-2 text-xl"></i>Cart</a>
                 </li>
                 <li>
-                    <a href="../brands/brands.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                    <a href="brands.html" class="text-lg px-3 py-2 inline-block bg-gray-700 rounded-md w-full"><i
                             class="ri-building-4-line text-white me-2 text-xl"></i>Brands</a>
                 </li>
                 <li>
@@ -82,8 +82,8 @@
                         <a href="../dashboard" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
                                 class="ri-dashboard-line text-white me-2 text-xl"></i>Dashboard</a>
                     </li>
-                    <li class="hover:bg-gray-700 rounded-md w-full bg-gray-700">
-                        <a href="users.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../users/users.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
                                 class="ri-group-2-line text-white me-2 text-xl"></i>Users</a>
                     </li>
                     <li class="hover:bg-gray-700 rounded-md w-full">
@@ -94,8 +94,8 @@
                         <a href="../carts-detail.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
                                 class="ri-shopping-cart-line text-white me-2 text-xl"></i>Cart</a>
                     </li>
-                    <li class="hover:bg-gray-700 rounded-md w-full">
-                        <a href="../brands/brands.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                    <li class="hover:bg-gray-700 rounded-md w-full bg-gray-700">
+                        <a href="brands.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
                                 class="ri-building-4-line text-white me-2 text-xl"></i>Brands</a>
                     </li>
                     <li class="hover:bg-gray-700 rounded-md w-full">
@@ -125,7 +125,7 @@
         <!-- Main Content -->
         <div class="p-8 lg:w-4/5 w-full">
             <!-- Page Title -->
-            <h1 class="text-3xl font-semibold mb-6">Users</h1>
+            <h1 class="text-3xl font-semibold mb-6">Brands</h1>
 
             <div class="flex flex-col gap-5">
                 <!-- Products List -->
@@ -133,8 +133,8 @@
                     <div class="flex justify-between">
                         <h2 class="text-2xl font-semibold mb-4">Dashboard</h2>
                         <!-- Add Product Button -->
-                        <a href="add-product.html" class="bg-gray-900 text-white text-sm md:text-md py-2 px-5 rounded-md h-fit">Add
-                            User</a>
+                        <a href="add-brands.html" class="bg-gray-900 text-white text-sm md:text-md py-2 px-5 rounded-md h-fit">Add
+                            Brands</a>
                     </div>
                     <div class="table_overflow overflow-x-auto w-full">
                         <table class="min-w-full table-auto mt-6">
@@ -142,15 +142,8 @@
                                 <tr class="bg-gray-300">
                                     <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">ID</th>
                                     <!-- <th class="px-4 py-2 text-left text-nowrap">Unique Id</th> -->
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Name</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Email</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Password</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Mobile</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Role</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Address</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Total Cart</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Total Orders</th>
-                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Account Status</th>
+                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Brand Name</th>
+                                    <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Total Brand Product</th>
                                     <th class="px-4 py-2 border border-gray-900 text-nowrap text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -162,55 +155,23 @@
                                 <tr>
                                     <td class="px-4 py-2 border border-gray-900 text-nowrap">001</td>
                                     <!-- <td class="px-4 py-2 text-nowrap">ab45fga</td> -->
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Anuj Kumar</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">anujkumar@gmail.com</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">abcd@123</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">1234567890</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Super Admin</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-green-500 text-center">Active</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">
-                                        <a href="edit-users.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Flora</td>
+                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center">30</td>
+                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center">
+                                        <a href="edit-brands.html" class="text-blue-600 hover:text-blue-800">Edit</a>
                                         |
-                                        <a href="delete-users.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                        <a href="delete-brands.php" class="text-red-600 hover:text-red-800">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="px-4 py-2 border border-gray-900 text-nowrap">002</td>
                                     <!-- <td class="px-4 py-2 text-nowrap">ab45fga</td> -->
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Dipak Sngh</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Dipak@gmail.com</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">abcd@123</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">1234567890</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Normal User</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-green-500 text-center">Active</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">
-                                        <a href="edit-users.html" class="text-blue-600 hover:text-blue-800">Edit</a>
+                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Woody</td>
+                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center">30</td>
+                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center">
+                                        <a href="edit-brands.html" class="text-blue-600 hover:text-blue-800">Edit</a>
                                         |
-                                        <a href="delete-users.php" class="text-red-600 hover:text-red-800">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">003</td>
-                                    <!-- <td class="px-4 border border-gray-900 py-2 text-nowrap">ab45fga</td> -->
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Suresh Singh</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">suresh@gmail.com</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">abcd@123</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">1234567890</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">Admin</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-center"><a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2">View</a></td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap text-green-500 text-center">Active</td>
-                                    <td class="px-4 py-2 border border-gray-900 text-nowrap">
-                                        <a href="edit-users.html" class="text-blue-600 hover:text-blue-800">Edit</a>
-                                        |
-                                        <a href="delete-users.php" class="text-red-600 hover:text-red-800">Delete</a>
+                                        <a href="delete-brands.php" class="text-red-600 hover:text-red-800">Delete</a>
                                     </td>
                                 </tr>
                                 

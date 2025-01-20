@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/admin-style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .table_overflow::-webkit-scrollbar {
+            display: none;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <main class="lg:flex">
+        <!-- Sidebar -->
+        <div
+            class="p-5 w-full flex lg:flex-col items-center lg:items-start justify-between lg:justify-start xl:w-[22%] lg:w-[30%] lg:h-[100dvh] bg-gray-900 text-white sticky top-0">
+            <div class="">
+                <h1 class="text-2xl font-bold">Admin Panel</h1>
+            </div>
+            <ul class="admin-menu space-y-1 mt-10 hidden lg:block w-full overflow-auto pe-2">
+                <li>
+                    <a href="../dashboard.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-dashboard-line text-white me-2 text-xl"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="../users/users.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-group-2-line text-white me-2 text-xl"></i>Users</a>
+                </li>
+                <li>
+                    <a href="products.html" class="text-lg px-3 py-2 inline-block bg-gray-700 rounded-md w-full"><i
+                            class="ri-ink-bottle-line text-white me-2 text-xl"></i>Products</a>
+                </li>
+                <li>
+                    <a href="../carts-details.html" class="text-lg px-3 py-2 inline-block w-full"><i class="ri-shopping-cart-line text-white me-2 text-xl"></i>Cart</a>
+                </li>
+                <li>
+                    <a href="../brands/brands.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-building-4-line text-white me-2 text-xl"></i>Brands</a>
+                </li>
+                <li>
+                    <a href="../shipping.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-truck-line text-white me-2 text-xl"></i>Shipping</a>
+                </li>
+                <li>
+                    <a href="../order-history.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-history-fill text-white me-2 text-xl"></i>Order History</a>
+                </li>
+                <li>
+                    <a href="../payment-history" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-money-rupee-circle-line text-white me-2 text-xl"></i>Payment History</a>
+                </li>
+                <li>
+                    <a href="../discount.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-discount-percent-line text-white me-2 text-xl"></i>Discount</a>
+                </li>
+                <li>
+                    <a href="../../index.html" class="text-lg px-3 py-2 inline-block w-full"><i
+                            class="ri-home-8-line text-white me-2 text-xl"></i>Home</a>
+                </li>
+                <!-- <li class="hover:bg-gray-700 rounded-md"><a href="admin_products.html" class="text-lg px-3 py-2 inline-block ">Manage Products</a>
+                </li>
+                <li class="hover:bg-gray-700 rounded-md"><a href="admin_orders.html" class="text-lg px-3 py-2 inline-block">Orders</a></li> -->
+            </ul>
+
+            <div id="admin-menu-btn"><i class="ri-menu-line text-white lg:hidden text-2xl"></i></div>
+
+            <div id="admin-mob-nav"
+                class="pt-5 pb-10 px-4 lg:hidden absolute top-full -left-full transition-all duration-300 w-full bg-gray-900">
+                <ul id="admin-mobile-menu" class="overflow-auto  flex flex-col gap-3 pe-2">
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../dashboard" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-dashboard-line text-white me-2 text-xl"></i>Dashboard</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../users/users.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-group-2-line text-white me-2 text-xl"></i>Users</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full bg-gray-700">
+                        <a href="products.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-ink-bottle-line text-white me-2 text-xl"></i>Products</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../carts-detail.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-shopping-cart-line text-white me-2 text-xl"></i>Cart</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../brands/brands.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-building-4-line text-white me-2 text-xl"></i>Brands</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../shipping.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-truck-line text-white me-2 text-xl"></i>Shipping</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../order-history.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-history-fill text-white me-2 text-xl"></i>Order History</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../payment-history.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-money-rupee-circle-line text-white me-2 text-xl"></i>Payment History</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../discount.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-discount-percent-line text-white me-2 text-xl"></i>Discount</a>
+                    </li>
+                    <li class="hover:bg-gray-700 rounded-md w-full">
+                        <a href="../../index.html" class="text-lg px-3 py-2 inline-block rounded-md w-full"><i
+                                class="ri-home-8-line text-white me-2 text-xl"></i>Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-8 xl:w-[78%] lg:w-[70%] w-full">
+            <!-- Main Content -->
+            <div class="px-5 py-8 md:p-8 flex flex-col items-center w-full">
+                <h1 class="text-3xl font-semibold mb-6">Edit Product</h1>
+
+                <!-- Product Form -->
+                <form id="add-product-form" action="" method="POST"
+                    class="bg-white p-6 shadow-lg rounded-lg w-full md:w-[600px] grid gap-5 grid-cols-2">
+                    <div class="col-span-2 lg:col-span-1">
+                        <label for="product_name" class="block text-sm font-medium text-gray-700">Product Name</label>
+                        <input type="text" id="product_name" name="product_name"
+                            class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                        <span id="product-name-error" class="text-red-500 text-sm"></span> <!-- Error message -->
+                    </div>
+
+                    <div class="col-span-2 lg:col-span-1">
+                        <label for="select_brand" class="block text-sm font-medium text-gray-700">Select Brand</label>
+                        <select name="select_brand"
+                            class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none"
+                            id="select_brand">
+                            <option selected disabled>Select Brand</option>
+                            <option value="flora">Flora</option>
+                            <option value="woody">Woody</option>
+                        </select>
+                        <span id="brand-name-error" class="text-red-500 text-sm"></span> <!-- Error message -->
+                    </div>
+
+                    <div class="col-span-2">
+                        <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                        <textarea type="text" id="description" name="description"
+                            class="h-20 mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none"></textarea>
+                        <span id="description-error" class="text-red-500 text-sm"></span> <!-- Error message -->
+                    </div>
+
+                    <div class="col-span-2">
+                        <label for="original_price" class="block text-sm font-medium text-gray-700">Original
+                            Price</label>
+                        <input type="text" id="original_price" name="original_price"
+                            class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                        <span id="original-price-error" class="text-red-500 text-sm"></span> <!-- Error message -->
+                    </div>
+
+                    <div class="col-span-2">
+                        <label for="discount" class="block text-sm font-medium text-gray-700">Discount</label>
+                        <input type="text" id="discount" name="discount"
+                            class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                        <span id="discount-error" class="text-red-500 text-sm"></span> <!-- Error message -->
+                    </div>
+
+                    <div class="col-span-2">
+                        <label for="image" class="block text-sm font-medium text-gray-700">Choose Image</label>
+                        <input type="file" id="image" name="image"
+                            class="mt-1 block w-full border border-gray-300 p-2 rounded-lg focus:ring focus:ring-gray-500 focus:outline-none">
+                        <span id="image-error" class="text-red-500 text-sm"></span> <!-- Error message -->
+                    </div>
+                    
+                    <div class="show_select_img col-span-2">
+                        <img src="../../assets/img/item-1.jpg" class="w-24" alt="">
+                    </div>
+
+                    <div class="col-span-2 mt-5">
+                        <button type="submit"
+                            class="w-full bg-gray-900 hover:bg-gray-600 text-white text-lg py-3 px-6 rounded-lg shadow-md transition-all duration-300">Edit
+                            Products</button>
+                    </div>
+                </form>
+            </div>
+
+
+
+    </main>
+
+    <script>
+        // Toggle mobile menu
+
+        const menuBtn = document.getElementById("admin-menu-btn");
+        const mobileMenu = document.getElementById("admin-mob-nav");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("left-0");
+        });
+
+
+        document.getElementById('edit-product-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+            let valid = true;
+
+            // Clear previous error messages
+            document.querySelectorAll('.text-red-500').forEach(el => el.textContent = '');
+
+            // Validate Product Name
+            const productName = document.getElementById('product_name').value.trim();
+            if (productName.length < 3) {
+                document.getElementById('product-name-error').textContent = 'Product name must be at least 3 characters.';
+                valid = false;
+            }
+
+            // Validate Select Brand
+            const brand = document.getElementById('select_brand').value;
+            if (brand === "Select Brand") {
+                document.getElementById('brand-name-error').textContent = 'Please select a valid brand.';
+                valid = false;
+            }
+
+            // Validate Description
+            const description = document.getElementById('description').value.trim();
+            if (description.length < 10) {
+                document.getElementById('description-error').textContent = 'Description must be at least 10 characters.';
+                valid = false;
+            }
+
+            // Validate Original Price
+            const originalPrice = document.getElementById('original_price').value.trim();
+            if (!originalPrice || isNaN(originalPrice) || Number(originalPrice) <= 0) {
+                document.getElementById('original-price-error').textContent = 'Please enter a valid price greater than 0.';
+                valid = false;
+            }
+
+            // Validate Discount
+            const discount = document.getElementById('discount').value.trim();
+            if (!discount || isNaN(discount) || Number(discount) < 0 || Number(discount) > 100) {
+                document.getElementById('discount-error').textContent = 'Please enter a discount between 0 and 100.';
+                valid = false;
+            }
+
+            // Validate Image
+            const image = document.getElementById('image').files[0];
+            if (!image) {
+                document.getElementById('image-error').textContent = 'Please upload an image.';
+                valid = false;
+            }
+
+            // If valid, submit the form
+            if (valid) {
+                e.target.submit(); // Submit the form
+            }
+        });
+    </script>
+</body>
+
+</html>
