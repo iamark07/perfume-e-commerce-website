@@ -22,11 +22,11 @@ setInterval(changeHeroImage, 6000); // Change image every 6 seconds
 // Add scroll effect to header
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
-    header.classList.add("bg-gray-900", "shadow-md");
-    header.classList.remove("bg-transparent");
+    header.classList.add("bg-gray-900/70", "shadow-md");
+    header.classList.remove("bg-gray-900/30");
   } else {
-    header.classList.remove("bg-gray-900", "shadow-md");
-    header.classList.add("bg-transparent");
+    header.classList.remove("bg-gray-900/70", "shadow-md");
+    header.classList.add("bg-gray-900/30");
   }
 });
 

@@ -23,7 +23,7 @@
 <body class="bg-[#fff7ee] font-sans text-gray-800">
 
     <header id="header"
-        class="header fixed top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-transparent">
+        class="header fixed top-0 left-0 w-full z-50 py-5 px-5 md:px-10 flex justify-between items-center transition-all duration-300 bg-gray-900/30 backdrop-blur-lg">
         <!-- Logo -->
         <div class="text-white text-xl font-bold"><a href="index.html">PerfumeBrand</a></div>
 
@@ -40,10 +40,12 @@
             <i id="search-icon" class="ri-search-line text-white text-xl cursor-pointer"></i>
 
             <a href="cart.html"><i class="ri-shopping-cart-line text-white text-xl cursor-pointer" title="Cart"></i></a>
-            <a href="login.html" class="hidden md:block"><i class="ri-user-line text-white text-xl cursor-pointer" title="Login"></i></a>
+            <a href="login.html" class="hidden md:block"><i class="ri-user-line text-white text-xl cursor-pointer"
+                    title="Login"></i></a>
             <div class="relative hidden md:block">
                 <div id="profile_btn"
-                    class="poppins-regular w-10 h-10 text-lg rounded-full bg-white shadow-md hidden md:flex items-center justify-center capitalize cursor-pointer">A
+                    class="poppins-regular w-10 h-10 text-lg rounded-full bg-white shadow-md hidden md:flex items-center justify-center capitalize cursor-pointer">
+                    A
                 </div>
                 <div id="profile_dropdown"
                     class="bg-white rounded-md shadow-md p-4 absolute top-full right-0 flex flex-col gap-2 mt-5 pointer-events-none opacity-0 transition-all duration-300">
@@ -111,7 +113,8 @@
                     <li><a href="cart.html"><i class="ri-shopping-cart-line text-xl me-2"></i>Cart</a></li>
                     <li><a href="profile.html"><i class="ri-profile-line text-xl me-2"></i>Profile</a></li>
 
-                    <li><a href="admin/dashboard.html"><i class="ri-user-settings-line text-xl me-2"></i>Admin Panel</a></li>
+                    <li><a href="admin/dashboard.html"><i class="ri-user-settings-line text-xl me-2"></i>Admin Panel</a>
+                    </li>
                     <li><a href="settings.html"><i class="ri-settings-5-line text-xl me-2"></i>Settings</a></li>
                     <li><a href="#"><i class="ri-logout-circle-r-line text-xl me-2"></i>Log out</a>
                     <li><a href="login.html"><i class="ri-login-circle-line text-xl me-2"></i>Login</a></li>
@@ -134,18 +137,18 @@
             <img src="assets/img/slider-3.jpg" alt="Hero Image 3"
                 class="hero-image absolute inset-0 w-full h-full object-cover object-center opacity-0">
         </div>
-        
+
         <!-- Hero Content -->
         <div
             class="absolute poppins-regular inset-0 z-10 flex flex-col justify-center items-center text-center text-white px-4 mt-32">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover Your Fragrance</h1>
-            <p class="text-lg md:text-xl">Experience luxury with every scent</p>
-            <a href="shop.html" class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-600 transition-all duration-300">Shop Now</a>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4" id="hero-title">Discover Your Fragrance</h1>
+            <p class="text-lg md:text-xl" id="hero-subtitle">Experience luxury with every scent</p>
+            <a href="shop.html" id="hero-button"
+                class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-600 transition-all duration-300">Shop
+                Now</a>
         </div>
     </div>
 
-    
-    
     <section class="brand-logo_container w-full bg-white py-3 md:py-5">
         <marquee behavior="" direction="">
             <div class="brand_logo flex items-center whitespace-nowrap gap-7 md:gap-16">
@@ -221,7 +224,8 @@
     </div>
 
     <!-- Product Cards -->
-    <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 p-4 poppins-regular" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 p-4 poppins-regular"
+        data-aos="fade-up">
         <!-- Manually added cards -->
         <div
             class="group bg-white shadow-md hover:shadow-lg hover:shadow-[#9b9b9b] rounded-lg overflow-hidden transition-all duration-500">
@@ -364,7 +368,8 @@
     </div>
 
     <!-- Pagination -->
-    <div class="max-w-6xl mt-10 mx-auto flex justify-center items-center space-x-2 p-4 poppins-regular" data-aos="fade-up">
+    <div class="max-w-6xl mt-10 mx-auto flex justify-center items-center space-x-2 p-4 poppins-regular"
+        data-aos="fade-up">
         <a href="#page1"
             class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-white text-gray-700 hover:bg-gray-900 hover:text-white">Prev</a>
         <a href="#page1" class="transition-all duration-300 px-4 py-2 rounded shadow-md bg-gray-900 text-white">1</a>
@@ -382,12 +387,14 @@
                 <!-- Brand Section -->
                 <div>
                     <h2 class="text-lg font-bold"><a href="index.html">PerfumeBrand</a></h2>
-                    <p class="text-gray-400 mt-4">Discover a world of enchanting fragrances. From timeless classics to modern favorites, Perfume Haven has it all.</p>
+                    <p class="text-gray-400 mt-4">Discover a world of enchanting fragrances. From timeless classics to
+                        modern favorites, Perfume Haven has it all.</p>
                 </div>
-    
+
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Quick Links</h3>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Quick Links
+                    </h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="index.html" class="hover:text-white">Home</a></li>
                         <li><a href="shop.html" class="hover:text-white">Shop</a></li>
@@ -395,10 +402,11 @@
                         <li><a href="contact.html" class="hover:text-white">Contact</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Customer Service -->
                 <div>
-                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Customer Service</h3>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Customer
+                        Service</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="faq.html" class="hover:text-white">FAQs</a></li>
                         <li><a href="#" class="hover:text-white">Shipping Policy</a></li>
@@ -406,10 +414,11 @@
                         <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Newsletter Subscription -->
                 <div>
-                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Stay Updated</h3>
+                    <h3 class="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-4">Stay Updated
+                    </h3>
                     <p class="text-gray-400">Subscribe to our newsletter to get the latest deals and updates.</p>
                     <form class="mt-4 flex">
                         <input type="email" placeholder="Your Email"
@@ -419,7 +428,7 @@
                     </form>
                 </div>
             </div>
-    
+
             <!-- Social Media Links -->
             <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
                 <p class="text-gray-400">&copy; 2025 Perfume Haven. All rights reserved.</p>
@@ -432,9 +441,44 @@
             </div>
         </div>
     </footer>
-    
 
     <!-- Scripts -->
+    <!-- gsap cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // GSAP Timeline for sequential animation
+            const tl = gsap.timeline();
+
+            // Title Animation
+            tl.from("#hero-title", {
+                duration: 1,
+                y: -50,
+                opacity: 0,
+                ease: "power2.out"
+            });
+
+            // Subtitle Animation
+            tl.from("#hero-subtitle", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power2.out"
+            },);
+
+            // Button Animation
+            tl.from("#hero-button", {
+                duration: 0.8,
+                y: -50,
+                opacity: 1,
+                ease: "power1.out"
+            },); 
+        });
+
+    </script> -->
+
     <script src="assets/js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
